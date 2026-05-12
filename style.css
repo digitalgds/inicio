@@ -416,14 +416,39 @@ footer {
 .footer-grid {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     flex-wrap: wrap;
-    gap: 2rem;
+    gap: 3rem;
+}
+
+.logo-img-footer {
+    height: 60px;
+    margin-bottom: 1rem;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.footer-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.footer-links a:hover {
+    color: var(--accent-green);
 }
 
 .footer-contact a {
     color: var(--accent-green);
     text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 /* Benefits */
@@ -592,7 +617,13 @@ footer {
     }
     
     .header-btn {
-        display: none;
+        display: inline-flex;
+        padding: 0.6rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    .logo-img {
+        height: 55px;
     }
 }
 
