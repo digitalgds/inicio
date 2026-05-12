@@ -61,9 +61,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    whatsappFloat.classList.add('show');
+                    whatsappFloat.classList.add('at-footer');
                 } else {
-                    whatsappFloat.classList.remove('show');
+                    whatsappFloat.classList.remove('at-footer');
                 }
             });
         }, {
