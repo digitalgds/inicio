@@ -443,12 +443,28 @@ footer {
     color: var(--accent-green);
 }
 
-.footer-contact a {
+.footer-social-link {
     color: var(--accent-green);
     text-decoration: none;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background: var(--dark-green);
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.footer-social-link:hover {
+    background: var(--accent-green);
+    color: #000;
+    transform: translateY(-3px);
+}
+
+.footer-social-link i {
+    width: 24px;
+    height: 24px;
 }
 
 /* Benefits */
