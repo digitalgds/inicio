@@ -528,7 +528,7 @@ footer {
 }
 
 .whatsapp-float.at-footer {
-    bottom: 120px; /* Ajuste para ficar acima do conteúdo do rodapé */
+    bottom: 200px; /* Ajuste para ficar acima do conteúdo do rodapé */
 }
 
 .whatsapp-float:hover {
