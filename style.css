@@ -525,6 +525,15 @@ footer {
     transition: var(--transition);
     animation: pulse-green 2s infinite;
     text-decoration: none;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.whatsapp-float.show {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
 }
 
 .whatsapp-float:hover {

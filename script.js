@@ -52,4 +52,24 @@ document.addEventListener('DOMContentLoaded', () => {
             header.style.background = 'rgba(5, 5, 5, 0.8)';
         }
     });
+
+    // WhatsApp Float Visibility (Only show when reaching footer)
+    const whatsappFloat = document.querySelector('.whatsapp-float');
+    const footer = document.querySelector('footer');
+
+    if (whatsappFloat && footer) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    whatsappFloat.classList.add('show');
+                } else {
+                    whatsappFloat.classList.remove('show');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        observer.observe(footer);
+    }
 });
