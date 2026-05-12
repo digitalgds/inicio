@@ -551,7 +551,7 @@ footer {
 /* WhatsApp Floating */
 .whatsapp-float {
     position: fixed;
-    bottom: 30px;
+    bottom: 100px;
     right: 30px;
     background-color: #25d366;
     color: #fff;
@@ -569,7 +569,7 @@ footer {
 }
 
 .whatsapp-float.at-footer {
-    bottom: 200px; /* Ajuste para ficar acima do conteúdo do rodapé */
+    bottom: 280px; /* Ajuste para ficar acima do conteúdo do rodapé */
 }
 
 .whatsapp-float:hover {
