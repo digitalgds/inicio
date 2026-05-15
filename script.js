@@ -72,4 +72,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
         observer.observe(footer);
     }
+    // WhatsApp Conversion Tracking
+    document.addEventListener('click', (e) => {
+        const anchor = e.target.closest('a');
+        if (anchor && anchor.href.includes('wa.me')) {
+            // Push event to GTM DataLayer
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                'event': 'whatsapp_click',
+                'button_location': anchor.className || 'floating_button',
+                'link_text': anchor.innerText.trim() || 'Icon Click'
+            });
+            console.log('WhatsApp Click Tracked:', anchor.href);
+        }
+    });
 });
