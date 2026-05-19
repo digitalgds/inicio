@@ -86,4 +86,28 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log('WhatsApp Click Tracked:', anchor.href);
         }
     });
+
+    // Form Validation (Strict required check)
+    const contactForm = document.querySelector('.contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            const inputs = contactForm.querySelectorAll('input[required], textarea[required]');
+            let isValid = true;
+            
+            inputs.forEach(input => {
+                // Check if it's empty or just contains spaces
+                if (!input.value.trim()) {
+                    isValid = false;
+                    input.style.borderColor = '#ef4444'; // Red color from theme
+                } else {
+                    input.style.borderColor = 'var(--accent-green)'; // Reset to success/focus color
+                }
+            });
+
+            if (!isValid) {
+                e.preventDefault();
+                alert('Por favor, preencha todos os campos obrigatórios corretamente.');
+            }
+        });
+    }
 });
