@@ -110,4 +110,38 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // Mascara de telefone: (99) 9 9999-9999
+    const phoneInput = document.getElementById('phone');
+    if (phoneInput) {
+        phoneInput.addEventListener('input', function(e) {
+            let digits = e.target.value.replace(/\D/g, '').substring(0, 11);
+            let formatted = '';
+
+            if (digits.length > 0) {
+                formatted = '(' + digits.substring(0, 2);
+            }
+            if (digits.length >= 3) {
+                formatted += ') ' + digits.substring(2, 3);
+            }
+            if (digits.length >= 4) {
+                formatted += ' ' + digits.substring(3, 7);
+            }
+            if (digits.length >= 8) {
+                formatted += '-' + digits.substring(7, 11);
+            }
+
+            e.target.value = formatted;
+        });
+
+        // Bloqueia teclas nao numericas
+        phoneInput.addEventListener('keydown', function(e) {
+            const allowedKeys = [8, 46, 9, 27, 13, 35, 36, 37, 38, 39, 40];
+            const isCtrl = e.ctrlKey || e.metaKey;
+            if (allowedKeys.includes(e.keyCode) || isCtrl) return;
+            if ((e.keyCode < 48 || e.keyCode > 57) && (e.keyCode < 96 || e.keyCode > 105)) {
+                e.preventDefault();
+            }
+        });
+    }
 });
