@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // -------------------------------------------------------
-    // Formulario: validacao inline + envio AJAX (sem redirecionar)
+    // Formulario: validacao inline + envio AJAX
     // -------------------------------------------------------
     const contactForm = document.querySelector('.contact-form');
     if (contactForm) {
@@ -184,13 +184,18 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(function(res) { return res.json(); })
             .then(function(data) {
                 if (data.success) {
+                    // Exibe mensagem de sucesso no lugar do formulario
                     const formContainer = document.querySelector('.form-container');
-                    const successDiv = document.getElementById('form-success');
+                    const successDiv    = document.getElementById('form-success');
                     formContainer.style.display = 'none';
-                    successDiv.style.display = 'flex';
+                    successDiv.style.display    = 'flex';
                     lucide.createIcons();
-                    contactForm.reset();
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+                    // Aguarda 5 segundos e recarrega a pagina (limpa tudo e volta ao topo)
+                    setTimeout(function() {
+                        window.location.href = window.location.pathname;
+                    }, 5000);
+
                 } else {
                     submitBtn.textContent = textoOriginal;
                     submitBtn.disabled = false;
