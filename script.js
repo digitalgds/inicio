@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+﻿document.addEventListener('DOMContentLoaded', () => {
     // Initialize Lucide Icons
     lucide.createIcons();
 
@@ -209,4 +209,128 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // =======================================================
+    // Seletor de Faturamento Interativo (Toggle Mensal/Anual)
+    // =======================================================
+    const btnMonthly = document.getElementById('billing-monthly');
+    const btnAnnual  = document.getElementById('billing-annual');
+
+    const priceStarter = document.getElementById('price-starter');
+    const pricePro     = document.getElementById('price-pro');
+
+    const oldPriceStarter = document.getElementById('old-price-starter');
+    const oldPricePro     = document.getElementById('old-price-pro');
+
+    const termsStarter = document.getElementById('terms-starter');
+    const termsPro     = document.getElementById('terms-pro');
+
+    const btnStarter = document.getElementById('btn-starter');
+    const btnPro     = document.getElementById('btn-pro');
+    const tagPro     = document.getElementById('tag-pro');
+
+    if (btnMonthly && btnAnnual) {
+        
+        function updatePricing(billingMode) {
+            // Adiciona classe de animacao (fade-out e scale)
+            const priceElements = [priceStarter, pricePro, oldPriceStarter, oldPricePro, termsStarter, termsPro];
+            
+            priceElements.forEach(el => {
+                if (el) {
+                    el.style.opacity = '0';
+                    el.style.transform = 'scale(0.95)';
+                    el.style.transition = 'all 0.2s ease-in-out';
+                }
+            });
+
+            setTimeout(() => {
+                if (billingMode === 'annual') {
+                    // Ativa botao Anual
+                    btnAnnual.classList.add('active');
+                    btnMonthly.classList.remove('active');
+
+                    // Precos Anuais (Com 20% desconto)
+                    if (priceStarter) priceStarter.textContent = '77';
+                    if (pricePro)     pricePro.textContent = '77';
+
+                    // Mostra preco antigo riscado
+                    if (oldPriceStarter) {
+                        oldPriceStarter.style.visibility = 'visible';
+                        oldPriceStarter.textContent = 'De R$ 97/mês';
+                    }
+                    if (oldPricePro) {
+                        oldPricePro.style.visibility = 'visible';
+                        oldPricePro.textContent = 'De R$ 97/mês';
+                    }
+
+                    // Descricoes de faturamento
+                    if (termsStarter) termsStarter.textContent = 'Sem taxa de implantação • Cobrado anualmente: R$ 924';
+                    if (termsPro)     termsPro.textContent = 'R$ 197 de implantação única • Cobrado anualmente: R$ 924';
+
+                    // Links personalizados do WhatsApp para faturamento Anual
+                    if (btnStarter) btnStarter.href = "https://wa.me/5562998834515?text=Ol%C3%A1%2C%20Leonardo%21%20Tenho%20interesse%20no%20Plano%20Starter%20Anual%20da%20Digital%20GDS.%20Quero%20aproveitar%20o%20desconto%20anual.";
+                    if (btnPro)     btnPro.href = "https://wa.me/5562998834515?text=Ol%C3%A1%2C%20Leonardo%21%20Tenho%20interesse%20no%20Plano%20Pro%20Anual%20da%20Digital%20GDS.%20Quero%20aproveitar%20o%20desconto%20anual.";
+                    
+                    // Tag do plano Pro indicando o desconto
+                    if (tagPro) {
+                        tagPro.textContent = 'Economize 20%';
+                        tagPro.classList.add('discount-green');
+                    }
+
+                } else {
+                    // Ativa botao Mensal
+                    btnMonthly.classList.add('active');
+                    btnAnnual.classList.remove('active');
+
+                    // Precos Mensais normais
+                    if (priceStarter) priceStarter.textContent = '97';
+                    if (pricePro)     pricePro.textContent = '97';
+
+                    // Oculta preco antigo riscado
+                    if (oldPriceStarter) {
+                        oldPriceStarter.style.visibility = 'hidden';
+                        oldPriceStarter.innerHTML = '&nbsp;';
+                    }
+                    if (oldPricePro) {
+                        oldPricePro.style.visibility = 'hidden';
+                        oldPricePro.innerHTML = '&nbsp;';
+                    }
+
+                    // Descricoes de faturamento
+                    if (termsStarter) termsStarter.textContent = 'Sem taxa de implantação • Cobrado mensalmente';
+                    if (termsPro)     termsPro.textContent = 'R$ 197 de implantação única • Cobrado mensalmente';
+
+                    // Links personalizados do WhatsApp para faturamento Mensal
+                    if (btnStarter) btnStarter.href = "https://wa.me/5562998834515?text=Ol%C3%A1%2C%20Leonardo%21%20Tenho%20interesse%20no%20Plano%20Starter%20Mensal%20da%20Digital%20GDS.%20Quero%20come%C3%A7ar%20com%20uma%20presen%C3%A7a%20digital%20b%C3%A1sica.";
+                    if (btnPro)     btnPro.href = "https://wa.me/5562998834515?text=Ol%C3%A1%2C%20Leonardo%21%20Tenho%20interesse%20no%20Plano%20Pro%20Mensal%20da%20Digital%20GDS.%20Quero%20minha%20presen%C3%A7a%20com%20dom%C3%ADnio%20pr%C3%B3prio.";
+
+                    // Tag do plano Pro normal
+                    if (tagPro) {
+                        tagPro.textContent = 'Popular';
+                    }
+                }
+
+                // Finaliza animacao com fade-in e retorno ao tamanho original
+                priceElements.forEach(el => {
+                    if (el) {
+                        el.style.opacity = '1';
+                        el.style.transform = 'scale(1)';
+                    }
+                });
+            }, 200);
+        }
+
+        btnMonthly.addEventListener('click', () => {
+            if (!btnMonthly.classList.contains('active')) {
+                updatePricing('monthly');
+            }
+        });
+
+        btnAnnual.addEventListener('click', () => {
+            if (!btnAnnual.classList.contains('active')) {
+                updatePricing('annual');
+            }
+        });
+    }
+
 });

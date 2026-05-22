@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -191,6 +191,7 @@
 
 
     <!-- Seção de Planos de Criação de Sites -->
+        <!-- Seção de Planos de Criação de Sites -->
     <section class="plans" id="planos">
         <div class="glow-green" style="top: 30%; right: 10%;"></div>
         <div class="container">
@@ -199,164 +200,230 @@
                 <p>Na Digital GDS, você pode começar com uma presença digital profissional por apenas R$97/mês, avançar para um domínio próprio ou construir uma estrutura completa para crescer com site, anúncios, SEO e estratégia.</p>
             </div>
 
+            <!-- Seletor de Faturamento Interativo (Toggle Mensal/Anual) -->
+            <div class="billing-toggle-wrapper" data-aos="fade-up">
+                <div class="billing-toggle-container">
+                    <button class="billing-btn active" id="billing-monthly">Faturamento Mensal</button>
+                    <button class="billing-btn" id="billing-annual">
+                        Faturamento Anual <span class="discount-pill">Economize 20%</span>
+                    </button>
+                </div>
+            </div>
+
             <div class="plans-grid">
                 <!-- CARD 1 — PLANO STARTER -->
                 <div class="card plan-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="plan-card-tag-wrapper">
+                        <span class="plan-card-tag">Sem fidelidade</span>
+                    </div>
                     <div class="plan-header">
-                        <div class="plan-icon-wrapper">
-                            <i data-lucide="smartphone" class="plan-icon"></i>
-                        </div>
-                        <span class="plan-badge-placeholder">&nbsp;</span>
                         <h3 class="plan-name">Starter</h3>
-                        <h4 class="plan-title">Presença Digital Básica</h4>
-                        <div class="plan-price">
-                            <span class="price-label">A partir de</span>
-                            <span class="price-val">R$97</span>
-                            <span class="price-period">/mês</span>
+                        <p class="plan-tagline">Presença Digital Básica</p>
+                        
+                        <div class="plan-price-container">
+                            <span class="plan-price-old" id="old-price-starter" style="visibility: hidden; height: 18px; display: block;">&nbsp;</span>
+                            <div class="plan-price">
+                                <span class="price-symbol">R$</span>
+                                <span class="price-value" id="price-starter">97</span>
+                                <span class="price-period">/mês</span>
+                            </div>
                         </div>
-                        <p class="plan-desc">Ideal para quem quer sair do improviso e ter uma página profissional simples, bonita e conectada ao WhatsApp, sem precisar investir alto no início.</p>
+                        
+                        <p class="plan-desc">Ideal para quem quer sair do improviso e ter uma página profissional simples, bonita e conectada ao WhatsApp, sem precisar investir alto.</p>
+                        
+                        <!-- CTA Button no Topo -->
+                        <a href="https://wa.me/5562998834515?text=Ol%C3%A1%2C%20Leonardo%21%20Tenho%20interesse%20no%20Plano%20Starter%20Mensal%20da%20Digital%20GDS.%20Quero%20come%C3%A7ar%20com%20uma%20presen%C3%A7a%20digital%20b%C3%A1sica." class="btn btn-outline-plan full-width" id="btn-starter" target="_blank" rel="noopener noreferrer">Escolher plano</a>
+                        <span class="plan-billing-terms" id="terms-starter">Sem taxa de implantação • Cobrado mensalmente</span>
                     </div>
-                    <div class="plan-features">
-                        <div class="features-group">
-                            <h5>Inclui:</h5>
-                            <ul>
-                                <li><i data-lucide="check" class="icon-green-check"></i> Página profissional básica</li>
-                                <li><i data-lucide="check" class="icon-green-check"></i> Hospedagem inclusa</li>
-                                <li><i data-lucide="check" class="icon-green-check"></i> Uso de domínio já existente do cliente</li>
-                                <li><i data-lucide="check" class="icon-green-check"></i> Endereço provisório/personalizado da agência</li>
-                                <li><i data-lucide="check" class="icon-green-check"></i> Botão direto para WhatsApp</li>
-                                <li><i data-lucide="check" class="icon-green-check"></i> Link para Instagram</li>
-                                <li><i data-lucide="check" class="icon-green-check"></i> Apresentação simples da empresa</li>
-                                <li><i data-lucide="check" class="icon-green-check"></i> Apresentação dos principais serviços</li>
-                                <li><i data-lucide="check" class="icon-green-check"></i> Design responsivo para celular</li>
-                                <li><i data-lucide="check" class="icon-green-check"></i> Ajustes básicos de texto e imagem</li>
-                                <li><i data-lucide="check" class="icon-green-check"></i> Suporte básico</li>
-                            </ul>
+
+                    <!-- Caixa de Destaque Interna (Highlight Box) -->
+                    <div class="plan-highlight-box">
+                        <div class="highlight-item not-included">
+                            <i data-lucide="x-circle" class="icon-red"></i>
+                            <span>Domínio próprio não incluso</span>
                         </div>
-                        <div class="features-group not-included">
-                            <h5>Não inclui:</h5>
-                            <ul>
-                                <li><i data-lucide="x" class="icon-red-x"></i> Compra de domínio novo</li>
-                                <li><i data-lucide="x" class="icon-red-x"></i> SEO estratégico</li>
-                                <li><i data-lucide="x" class="icon-red-x"></i> Google Ads / Meta Ads</li>
-                                <li><i data-lucide="x" class="icon-red-x"></i> E-mail profissional</li>
-                                <li><i data-lucide="x" class="icon-red-x"></i> Blog / Páginas extras</li>
-                                <li><i data-lucide="x" class="icon-red-x"></i> Sistema ou Aplicativo</li>
-                                <li><i data-lucide="x" class="icon-red-x"></i> Copywriting avançado</li>
-                            </ul>
+                        <div class="highlight-item">
+                            <i data-lucide="server" class="icon-green"></i>
+                            <span>Hospedagem inclusa</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i data-lucide="link" class="icon-green"></i>
+                            <span>Subdomínio gds.link/empresa</span>
                         </div>
                     </div>
-                    <div class="plan-footer">
-                        <p class="plan-support-msg">Para quem quer começar com uma presença digital acessível e profissional.</p>
-                        <a href="https://wa.me/5562998834515?text=Ol%C3%A1%2C%20Leonardo%21%20Tenho%20interesse%20no%20Plano%20Starter%20da%20Digital%20GDS.%20Quero%20come%C3%A7ar%20com%20uma%20presen%C3%A7a%20digital%20b%C3%A1sica." class="btn btn-secondary full-width" target="_blank" rel="noopener noreferrer">Quero começar com o Starter</a>
+
+                    <!-- Lista Completa de Recursos -->
+                    <div class="plan-features-list">
+                        <h5>O que inclui:</h5>
+                        <ul>
+                            <li><i data-lucide="check" class="icon-green-check"></i> Página profissional básica</li>
+                            <li><i data-lucide="check" class="icon-green-check"></i> Uso de domínio do cliente (se tiver)</li>
+                            <li><i data-lucide="check" class="icon-green-check"></i> Botão direto para WhatsApp</li>
+                            <li><i data-lucide="check" class="icon-green-check"></i> Link destacado para Instagram</li>
+                            <li><i data-lucide="check" class="icon-green-check"></i> Apresentação simples do negócio</li>
+                            <li><i data-lucide="check" class="icon-green-check"></i> Descrição dos principais serviços</li>
+                            <li><i data-lucide="check" class="icon-green-check"></i> Layout responsivo e mobile-first</li>
+                            <li><i data-lucide="check" class="icon-green-check"></i> Ajustes básicos de conteúdo</li>
+                            <li><i data-lucide="check" class="icon-green-check"></i> Suporte técnico via agência</li>
+                        </ul>
                     </div>
                 </div>
 
                 <!-- CARD 2 — PLANO PRO -->
                 <div class="card plan-card plan-card-featured" data-aos="fade-up" data-aos-delay="200">
+                    <div class="plan-badge-top">MAIS RECOMENDADO</div>
+                    <div class="plan-card-tag-wrapper">
+                        <span class="plan-card-tag discount-green" id="tag-pro">Popular</span>
+                    </div>
                     <div class="plan-header">
-                        <div class="plan-icon-wrapper">
-                            <i data-lucide="globe" class="plan-icon"></i>
-                        </div>
-                        <span class="plan-badge">Mais recomendado</span>
                         <h3 class="plan-name">Pro</h3>
-                        <h4 class="plan-title">Presença Digital com Domínio Próprio</h4>
-                        <div class="plan-price">
-                            <span class="price-val">R$197</span>
-                            <span class="price-setup">implantação</span>
-                            <span class="price-separator">+</span>
-                            <span class="price-val">R$97</span>
-                            <span class="price-period">/mês</span>
+                        <p class="plan-tagline">Presença com Domínio Próprio</p>
+                        
+                        <div class="plan-price-container">
+                            <span class="plan-price-old" id="old-price-pro" style="visibility: hidden; height: 18px; display: block;">&nbsp;</span>
+                            <div class="plan-price">
+                                <span class="price-symbol">R$</span>
+                                <span class="price-value" id="price-pro">97</span>
+                                <span class="price-period">/mês</span>
+                            </div>
                         </div>
-                        <p class="plan-desc">Ideal para empresas que querem ter um endereço próprio na internet, transmitir mais confiança e apresentar seus serviços com mais profissionalismo.</p>
+                        
+                        <p class="plan-desc">Ideal para empresas que querem ter um endereço próprio na internet (.com.br), transmitir mais autoridade e apresentar serviços com mais profissionalismo.</p>
+                        
+                        <!-- CTA Button no Topo (Destaque Verde Sólido) -->
+                        <a href="https://wa.me/5562998834515?text=Ol%C3%A1%2C%20Leonardo%21%20Tenho%20interesse%20no%20Plano%20Pro%20Mensal%20da%20Digital%20GDS.%20Quero%20minha%20presen%C3%A7a%20com%20dom%C3%ADnio%20pr%C3%B3prio." class="btn btn-solid-plan full-width" id="btn-pro" target="_blank" rel="noopener noreferrer">Escolher plano</a>
+                        <span class="plan-billing-terms" id="terms-pro">R$ 197 de implantação única • Cobrado mensalmente</span>
                     </div>
-                    <div class="plan-features">
-                        <div class="features-group">
-                            <h5>Inclui:</h5>
-                            <ul>
-                                <li><i data-lucide="check" class="icon-green-check"></i> <strong>Tudo do Plano Starter</strong></li>
-                                <li><i data-lucide="check" class="icon-green-check"></i> Aquisição/configuração de domínio próprio</li>
-                                <li><i data-lucide="check" class="icon-green-check"></i> Publicação no domínio da empresa</li>
-                                <li><i data-lucide="check" class="icon-green-check"></i> Configuração técnica inicial</li>
-                                <li><i data-lucide="check" class="icon-green-check"></i> Estrutura profissional com WhatsApp</li>
-                                <li><i data-lucide="check" class="icon-green-check"></i> Link para Instagram</li>
-                                <li><i data-lucide="check" class="icon-green-check"></i> Design responsivo para celular</li>
-                                <li><i data-lucide="check" class="icon-green-check"></i> Ajuste básico de SEO (título/descrição)</li>
-                                <li><i data-lucide="check" class="icon-green-check"></i> Suporte básico</li>
-                            </ul>
+
+                    <!-- Caixa de Destaque Interna (Highlight Box - Estilizada) -->
+                    <div class="plan-highlight-box highlight-featured">
+                        <div class="highlight-item">
+                            <i data-lucide="gift" class="icon-green"></i>
+                            <span><strong>Domínio próprio grátis</strong> por 1 ano</span>
                         </div>
-                        <div class="features-group not-included">
-                            <h5>Não inclui:</h5>
-                            <ul>
-                                <li><i data-lucide="x" class="icon-red-x"></i> SEO avançado</li>
-                                <li><i data-lucide="x" class="icon-red-x"></i> Gestão de Google Ads / Meta Ads</li>
-                                <li><i data-lucide="x" class="icon-red-x"></i> E-mail profissional</li>
-                                <li><i data-lucide="x" class="icon-red-x"></i> Blog / Aplicativo</li>
-                                <li><i data-lucide="x" class="icon-red-x"></i> Sistema ou Funil avançado</li>
-                                <li><i data-lucide="x" class="icon-red-x"></i> Páginas extras complexas</li>
-                            </ul>
+                        <div class="highlight-item">
+                            <i data-lucide="server" class="icon-green"></i>
+                            <span>Hospedagem profissional inclusa</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i data-lucide="shield-check" class="icon-green"></i>
+                            <span>DNS e SSL (certificado de segurança)</span>
                         </div>
                     </div>
-                    <div class="plan-footer">
-                        <p class="plan-support-msg">Para empresas que querem mais autoridade com um domínio próprio.</p>
-                        <a href="https://wa.me/5562998834515?text=Ol%C3%A1%2C%20Leonardo%21%20Tenho%20interesse%20no%20Plano%20Pro%20da%20Digital%20GDS.%20Quero%20uma%20presen%C3%A7a%20digital%20com%20dom%C3%ADnio%20pr%C3%B3prio." class="btn btn-primary full-width" target="_blank" rel="noopener noreferrer">Quero meu domínio próprio</a>
+
+                    <!-- Lista Completa de Recursos -->
+                    <div class="plan-features-list">
+                        <h5>Tudo do Starter e mais:</h5>
+                        <ul>
+                            <li><i data-lucide="check" class="icon-green-check"></i> <strong>Domínio Próprio (.com.br) incluso</strong></li>
+                            <li><i data-lucide="check" class="icon-green-check"></i> Instalação técnica no domínio próprio</li>
+                            <li><i data-lucide="check" class="icon-green-check"></i> Presença digital independente</li>
+                            <li><i data-lucide="check" class="icon-green-check"></i> Ajuste básico de SEO (título e descrição)</li>
+                            <li><i data-lucide="check" class="icon-green-check"></i> Carregamento otimizado de página</li>
+                            <li><i data-lucide="check" class="icon-green-check"></i> Indexação básica nas buscas do Google</li>
+                            <li><i data-lucide="check" class="icon-green-check"></i> Suporte prioritário via WhatsApp</li>
+                        </ul>
                     </div>
                 </div>
 
                 <!-- CARD 3 — PLANO ULTRA -->
                 <div class="card plan-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="plan-card-tag-wrapper">
+                        <span class="plan-card-tag">Exclusivo</span>
+                    </div>
                     <div class="plan-header">
-                        <div class="plan-icon-wrapper">
-                            <i data-lucide="sparkles" class="plan-icon"></i>
-                        </div>
-                        <span class="plan-badge-placeholder">&nbsp;</span>
                         <h3 class="plan-name">Ultra</h3>
-                        <h4 class="plan-title">Estrutura Digital Personalizada</h4>
-                        <div class="plan-price">
-                            <span class="price-val">Sob consulta</span>
-                            <span class="price-period">diagnóstico</span>
+                        <p class="plan-tagline">Estrutura Digital Completa</p>
+                        
+                        <div class="plan-price-container">
+                            <span class="plan-price-old" style="visibility: hidden; height: 18px; display: block;">&nbsp;</span>
+                            <div class="plan-price">
+                                <span class="price-value-consult">Sob consulta</span>
+                            </div>
                         </div>
-                        <p class="plan-desc">Ideal para empresas que querem ir além de uma página simples e construir uma estrutura digital completa para gerar tráfego, contatos, autoridade e crescimento.</p>
+                        
+                        <p class="plan-desc">Ideal para empresas que querem ir além e construir uma estrutura profissional completa para gerar tráfego qualificado, captar leads e acelerar vendas.</p>
+                        
+                        <!-- CTA Button no Topo -->
+                        <a href="https://wa.me/5562998834515?text=Ol%C3%A1%2C%20Leonardo%21%20Tenho%20interesse%20no%20Plano%20Ultra%20da%20Digital%20GDS.%20Quero%20uma%20an%C3%A1lise%20personalizada%20de%20estrutura%20completa." class="btn btn-outline-plan full-width" target="_blank" rel="noopener noreferrer">Escolher plano</a>
+                        <span class="plan-billing-terms">Planejamento e tráfego sob demanda</span>
                     </div>
-                    <div class="plan-features">
-                        <div class="features-group">
-                            <h5>Pode incluir:</h5>
-                            <ul>
-                                <li><i data-lucide="check" class="icon-green-check"></i> Site personalizado</li>
-                                <li><i data-lucide="check" class="icon-green-check"></i> Landing pages de alta conversão</li>
-                                <li><i data-lucide="check" class="icon-green-check"></i> Páginas específicas de serviços</li>
-                                <li><i data-lucide="check" class="icon-green-check"></i> Copywriting estratégico</li>
-                                <li><i data-lucide="check" class="icon-green-check"></i> SEO estratégico</li>
-                                <li><i data-lucide="check" class="icon-green-check"></i> Gestão de Google Ads e Meta Ads</li>
-                                <li><i data-lucide="check" class="icon-green-check"></i> Configuração de pixel e eventos</li>
-                                <li><i data-lucide="check" class="icon-green-check"></i> Página de obrigado</li>
-                                <li><i data-lucide="check" class="icon-green-check"></i> Otimização para conversão (CRO)</li>
-                                <li><i data-lucide="check" class="icon-green-check"></i> Integração avançada WhatsApp</li>
-                                <li><i data-lucide="check" class="icon-green-check"></i> Estratégia de tráfego pago</li>
-                                <li><i data-lucide="check" class="icon-green-check"></i> Estratégia de crescimento mensal</li>
-                                <li><i data-lucide="check" class="icon-green-check"></i> Aplicativo ou sistema personalizado</li>
-                                <li><i data-lucide="check" class="icon-green-check"></i> E-mail profissional</li>
-                                <li><i data-lucide="check" class="icon-green-check"></i> Acompanhamento consultivo</li>
-                            </ul>
+
+                    <!-- Caixa de Destaque Interna (Highlight Box) -->
+                    <div class="plan-highlight-box">
+                        <div class="highlight-item">
+                            <i data-lucide="sparkles" class="icon-green"></i>
+                            <span>Landing Pages e Sites sob medida</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i data-lucide="target" class="icon-green"></i>
+                            <span>Gestão de Google Ads e Meta Ads</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i data-lucide="trending-up" class="icon-green"></i>
+                            <span>Otimização constante de conversão (CRO)</span>
                         </div>
                     </div>
-                    <div class="plan-footer text-center">
-                        <p class="plan-support-msg">Para empresas que querem crescer com site, anúncios, SEO e estratégia personalizada.</p>
-                        <a href="https://wa.me/5562998834515?text=Ol%C3%A1%2C%20Leonardo%21%20Tenho%20interesse%20no%20Plano%20Ultra%20da%20Digital%20GDS.%20Quero%20uma%20an%C3%A1lise%20personalizada%20para%20crescer%20com%20site%2C%20an%C3%BAncios%20e%20estrat%C3%A9gia%20digital." class="btn btn-secondary full-width" target="_blank" rel="noopener noreferrer">Quero uma análise personalizada</a>
+
+                    <!-- Lista Completa de Recursos -->
+                    <div class="plan-features-list">
+                        <h5>Pode incluir:</h5>
+                        <ul>
+                            <li><i data-lucide="check" class="icon-green-check"></i> Design e desenvolvimento exclusivo</li>
+                            <li><i data-lucide="check" class="icon-green-check"></i> Estrutura com múltiplas páginas e serviços</li>
+                            <li><i data-lucide="check" class="icon-green-check"></i> Copywriting estratégico focado em conversão</li>
+                            <li><i data-lucide="check" class="icon-green-check"></i> Integrações avançadas e formulários</li>
+                            <li><i data-lucide="check" class="icon-green-check"></i> Otimização avançada de velocidade</li>
+                            <li><i data-lucide="check" class="icon-green-check"></i> SEO avançado para buscas locais</li>
+                            <li><i data-lucide="check" class="icon-green-check"></i> Configuração de Pixel, tags e eventos</li>
+                            <li><i data-lucide="check" class="icon-green-check"></i> Diagnóstico e acompanhamento estratégico</li>
+                        </ul>
                     </div>
                 </div>
             </div>
 
-            <!-- Observação -->
+            <!-- Observação de Planos (Compactada) -->
             <p class="plans-note" data-aos="fade-up">
-                <strong>Observação:</strong> Os planos Starter e Pro são indicados para presença digital inicial e não incluem SEO estratégico, gestão de anúncios, e-mail profissional, aplicativo, sistema personalizado ou funcionalidades avançadas. Esses recursos podem ser avaliados no Plano Ultra conforme a necessidade de cada empresa.
+                * Os planos Starter e Pro destinam-se a posicionamento e presença inicial, operando sob nossa estrutura de servidor padrão. Funcionalidades avançadas, SEO estrutural, e-mail corporativo ou tráfego pago sob gestão podem ser integrados no plano Ultra sob consulta.
             </p>
 
-            <!-- Chamada Final -->
+            <!-- Rodapé da Seção: Parcelamento, Bandeiras e Garantia (Hostinger Style) -->
+            <div class="plans-payment-footer" data-aos="fade-up">
+                <p class="payment-installments">
+                    O pagamento da implantação ou dos planos pode ser parcelado em até <strong>12x sem juros</strong>
+                </p>
+                <div class="payment-logos">
+                    <!-- Visa -->
+                    <span class="payment-icon-wrapper" title="Visa">
+                        <svg viewBox="0 0 24 24" width="36" height="24" fill="currentColor"><path d="M14.024 15.023h1.834L17 8.977h-1.835l-1.141 6.046zm6.864-5.834c-.287-1.127-1.61-1.19-2.316-1.19-1.921 0-3.082.97-3.093 2.186-.01 1.008.975 1.57 1.71 1.905.753.344.996.568.996.88 0 .474-.61.69-1.173.69-1.571 0-2.45-.632-3.14-1.143l-.478 2.336c.69.297 1.942.553 3.25.553 2.76 0 4.545-1.282 4.568-3.265.01-1.09-.693-1.922-2.222-2.607-.925-.436-1.492-.727-1.492-1.172 0-.392.483-.803 1.52-.803.861-.013 1.488.17 1.97.363l.235.102.466-2.185zm-14.81 5.834l2.128-5.834.428 1.996c.01.037.195.892.195.892l-.951 3.264h1.798l2.91-8.24h-2.138L9.043 12.5l-.261-1.28c-.015-.078-.178-.853-.178-.853L8.256 8.977H5.242L5.02 9.94c1.175.257 2.134.877 2.793 1.543l-1.737 3.54h1.76z"/></svg>
+                    </span>
+                    <!-- Mastercard -->
+                    <span class="payment-icon-wrapper" title="Mastercard">
+                        <svg viewBox="0 0 24 24" width="36" height="24" fill="currentColor"><circle cx="8" cy="12" r="6" opacity="0.85"/><circle cx="16" cy="12" r="6" opacity="0.85"/><path d="M12 7.76a5.97 5.97 0 0 1 2.13 4.24 5.97 5.97 0 0 1-2.13 4.24 5.97 5.97 0 0 1-2.13-4.24A5.97 5.97 0 0 1 12 7.76z"/></svg>
+                    </span>
+                    <!-- Elo (Representativo) -->
+                    <span class="payment-icon-wrapper" title="Elo">
+                        <svg viewBox="0 0 24 24" width="36" height="24" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-3-9h6v2H9v-2z"/></svg>
+                    </span>
+                    <!-- American Express -->
+                    <span class="payment-icon-wrapper" title="American Express">
+                        <svg viewBox="0 0 24 24" width="36" height="24" fill="currentColor"><rect width="20" height="14" x="2" y="5" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M6 10h2v4H6zm5 0h3v4h-3zm6 0h2v4h-2zm-9 2h2m3 0h2" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </span>
+                    <!-- Pix -->
+                    <span class="payment-icon-wrapper pix-wrapper" title="Pix">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12 .3a.75.75 0 0 0-.53.22L6.72 5.27a.75.75 0 0 0 0 1.06l4.75 4.75a.75.75 0 0 0 1.06 0l4.75-4.75a.75.75 0 0 0 0-1.06L12.53.52A.75.75 0 0 0 12 .3zm0 11.63a.75.75 0 0 0-.53.22l-4.75 4.75a.75.75 0 0 0 0 1.06l4.75 4.75a.75.75 0 0 0 1.06 0l4.75-4.75a.75.75 0 0 0 0-1.06l-4.75-4.75a.75.75 0 0 0-.53-.22zM.72 11.47a.75.75 0 0 0 0 1.06l4.75 4.75a.75.75 0 0 0 1.06 0l4.75-4.75a.75.75 0 0 0 0-1.06L6.53 6.72a.75.75 0 0 0-1.06 0L.72 11.47zm11.66-4.75a.75.75 0 0 0 0 1.06l4.75 4.75a.75.75 0 0 0 1.06 0l4.75-4.75a.75.75 0 0 0 0-1.06l-4.75-4.75a.75.75 0 0 0-1.06 0z"/></span >
+                    </span>
+                </div>
+                <p class="payment-guarantee">
+                    * Garantimos total estabilidade e suporte técnico para que sua presença digital permaneça no ar de forma sólida e gerando resultados contínuos.
+                </p>
+            </div>
+
+            <!-- Chamada Final (Melhor Integrada) -->
             <div class="plans-cta-box" data-aos="zoom-in">
-                <h3>Não sabe qual plano escolher?</h3>
-                <p>Fale com o Leonardo no WhatsApp e receba uma orientação rápida sobre o melhor caminho para sua empresa começar no digital.</p>
-                <a href="https://wa.me/5562998834515?text=Ol%C3%A1%2C%20Leonardo%21%20Vim%20pela%20landing%20page%20da%20Digital%20GDS%20e%20quero%20ajuda%20para%20escolher%20o%20melhor%20plano%20para%20minha%20empresa." class="btn btn-primary btn-large" target="_blank" rel="noopener noreferrer">
+                <h3>Ainda tem dúvidas de qual plano escolher?</h3>
+                <p>Fale direto com o Leonardo no WhatsApp. Analisamos o momento atual da sua empresa de graça e sugerimos a estrutura com melhor custo-benefício para você começar.</p>
+                <a href="https://wa.me/5562998834515?text=Ol%C3%A1%2C%20Leonardo%21%20Estou%20na%20landing%20page%20da%20Digital%20GDS%20e%20gostaria%20de%20uma%20orienta%C3%A7%C3%A2o%20para%20escolher%20o%20plano%20ideal." class="btn btn-primary btn-large" target="_blank" rel="noopener noreferrer">
                     <i data-lucide="message-circle" class="btn-icon"></i> Falar com Leonardo no WhatsApp
                 </a>
             </div>

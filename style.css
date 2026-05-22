@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 :root {
     --primary-bg: #050505;
@@ -767,7 +767,7 @@ footer {
     80%       { transform: translateX(4px); }
 }
 /* ==========================================================================
-   Secao de Planos de Criacao de Sites
+   Secao de Planos de Criacao de Sites — Premium Redesign (Hostinger/Claude Reference)
    ========================================================================== */
 .plans {
     padding: 8rem 0;
@@ -775,20 +775,79 @@ footer {
     background-color: var(--secondary-bg);
 }
 
+/* Faturamento Switch / Toggle (Estilo Claude) */
+.billing-toggle-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: -1rem;
+    margin-bottom: 4rem;
+}
+
+.billing-toggle-container {
+    display: inline-flex;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-color);
+    padding: 0.35rem;
+    border-radius: 50px;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.billing-btn {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.88rem;
+    font-weight: 600;
+    padding: 0.65rem 1.4rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    user-select: none;
+}
+
+.billing-btn:hover {
+    color: var(--text-main);
+}
+
+.billing-btn.active {
+    background: var(--accent-green);
+    color: #000000;
+}
+
+.discount-pill {
+    background: rgba(0, 230, 118, 0.15);
+    color: var(--accent-green);
+    font-size: 0.72rem;
+    padding: 0.18rem 0.5rem;
+    border-radius: 30px;
+    font-weight: 700;
+    transition: var(--transition);
+}
+
+.billing-btn.active .discount-pill {
+    background: #013D2C;
+    color: var(--accent-green);
+}
+
+/* Grid Stack */
 .plans-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     align-items: stretch;
-    margin-top: 4rem;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
 }
 
+/* Premium Card Layout */
 .plan-card {
-    background: var(--card-bg);
+    background: rgba(255, 255, 255, 0.02);
     border: 1px solid var(--border-color);
-    border-radius: 20px;
-    padding: 3rem 2rem;
+    border-radius: 24px;
+    padding: 3.5rem 2rem 2.5rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -799,257 +858,403 @@ footer {
 
 .plan-card:hover {
     transform: translateY(-8px);
-    border-color: rgba(0, 230, 118, 0.3);
-    box-shadow: 0 10px 30px rgba(0, 230, 118, 0.05);
+    border-color: rgba(0, 230, 118, 0.25);
+    box-shadow: 0 15px 35px rgba(0, 230, 118, 0.04);
 }
 
-/* Featured Plan Card (Pro) */
-.plan-card-featured {
-    border: 2px solid var(--accent-green);
-    background: rgba(1, 61, 44, 0.15);
-    box-shadow: 0 15px 40px rgba(0, 230, 118, 0.1);
-    transform: scale(1.03);
-}
-
-.plan-card-featured:hover {
-    transform: translateY(-8px) scale(1.03);
-    box-shadow: 0 20px 45px rgba(0, 230, 118, 0.15);
-    border-color: var(--accent-green);
-}
-
-.plan-icon-wrapper {
-    width: 60px;
-    height: 60px;
-    background: rgba(0, 230, 118, 0.1);
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1.5rem;
-}
-
-.plan-icon {
-    width: 30px;
-    height: 30px;
-    color: var(--accent-green);
-}
-
-.plan-badge {
+/* Card Tags (Superior Direito) */
+.plan-card-tag-wrapper {
     position: absolute;
     top: 1.5rem;
     right: 1.5rem;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.plan-card-tag {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: var(--text-secondary);
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 0.28rem 0.65rem;
+    border-radius: 30px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+}
+
+.discount-green {
+    background: rgba(0, 230, 118, 0.08) !important;
+    border-color: rgba(0, 230, 118, 0.2) !important;
+    color: var(--accent-green) !important;
+}
+
+/* Plano Pro Destaque (Estilo Hostinger) */
+.plan-card-featured {
+    border: 2px solid var(--accent-green);
+    background: rgba(1, 61, 44, 0.08);
+    box-shadow: 0 15px 40px rgba(0, 230, 118, 0.08);
+}
+
+.plan-card-featured:hover {
+    border-color: var(--accent-green);
+    box-shadow: 0 20px 45px rgba(0, 230, 118, 0.12);
+}
+
+.plan-badge-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
     background: var(--accent-green);
     color: #050505;
-    font-size: 0.75rem;
-    font-weight: 800;
+    text-align: center;
+    font-size: 0.72rem;
+    font-weight: 850;
     text-transform: uppercase;
-    padding: 0.4rem 0.8rem;
-    border-radius: 30px;
-    letter-spacing: 0.05em;
-    z-index: 2;
+    padding: 0.52rem 0;
+    letter-spacing: 0.08em;
+    border-top-left-radius: 22px;
+    border-top-right-radius: 22px;
+    z-index: 10;
 }
 
-.plan-badge-placeholder {
-    font-size: 0.75rem;
-    padding: 0.4rem 0.8rem;
-    display: block;
-    margin-bottom: 0.5rem;
-}
-
+/* Card Header */
 .plan-name {
-    font-size: 1rem;
-    color: var(--accent-green);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
+    font-size: 1.85rem;
     font-weight: 800;
-    margin-bottom: 0.5rem;
+    color: var(--text-main);
+    margin-bottom: 0.2rem;
+    letter-spacing: -0.01em;
 }
 
-.plan-title {
-    font-size: 1.5rem;
-    font-weight: 700;
-    line-height: 1.3;
+.plan-tagline {
+    font-size: 0.9rem;
+    color: var(--accent-green);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
     margin-bottom: 1.5rem;
-    color: var(--text-main);
+}
+
+/* Price block */
+.plan-price-container {
+    margin-bottom: 1.2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.plan-price-old {
+    font-size: 0.85rem;
+    text-decoration: line-through;
+    color: rgba(255, 255, 255, 0.35);
+    transition: var(--transition);
 }
 
 .plan-price {
     display: flex;
     align-items: baseline;
-    gap: 0.4rem;
-    margin-bottom: 1.5rem;
-    flex-wrap: wrap;
+    margin-top: 0.1rem;
 }
 
-.price-label {
-    font-size: 0.9rem;
-    color: var(--text-secondary);
+.price-symbol {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-right: 0.18rem;
 }
 
-.price-val {
-    font-size: 2.5rem;
+.price-value {
+    font-size: 3.1rem;
     font-weight: 800;
     color: var(--text-main);
+    line-height: 1;
+    letter-spacing: -0.03em;
+    transition: var(--transition);
+}
+
+.price-value-consult {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--text-main);
+    line-height: 1;
+    letter-spacing: -0.01em;
+    margin-top: 1rem;
+    margin-bottom: 0.2rem;
 }
 
 .price-period {
-    font-size: 1rem;
+    font-size: 1.05rem;
     color: var(--text-secondary);
-}
-
-.price-setup {
-    font-size: 0.8rem;
-    color: var(--text-secondary);
-    background: rgba(255, 255, 255, 0.05);
-    padding: 0.2rem 0.5rem;
-    border-radius: 4px;
-}
-
-.price-separator {
-    font-size: 1.2rem;
-    color: var(--accent-green);
-    font-weight: bold;
+    margin-left: 0.15rem;
 }
 
 .plan-desc {
-    font-size: 0.95rem;
-    line-height: 1.6;
+    font-size: 0.9rem;
+    line-height: 1.55;
     color: var(--text-secondary);
-    margin-bottom: 2rem;
+    opacity: 0.85;
+    margin-bottom: 1.8rem;
+    min-height: 84px; /* Garante alinhamento dos botoes */
 }
 
-.plan-features {
+/* Botoes dos Cards */
+.btn-outline-plan {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: var(--text-main);
+    font-size: 0.95rem;
+    padding: 0.95rem 1.5rem;
+    border-radius: 12px;
+    font-weight: 700;
+    transition: var(--transition);
+}
+
+.btn-outline-plan:hover {
+    border-color: var(--accent-green);
+    color: var(--accent-green);
+    background: rgba(0, 230, 118, 0.02);
+    transform: translateY(-2px);
+}
+
+.btn-solid-plan {
+    background: var(--accent-green);
+    border: 1px solid var(--accent-green);
+    color: #000000;
+    font-size: 0.95rem;
+    padding: 0.95rem 1.5rem;
+    border-radius: 12px;
+    font-weight: 700;
+    transition: var(--transition);
+    box-shadow: 0 4px 15px rgba(0, 230, 118, 0.2);
+}
+
+.btn-solid-plan:hover {
+    background: #00c866;
+    border-color: #00c866;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(0, 230, 118, 0.35);
+}
+
+.plan-billing-terms {
+    display: block;
+    text-align: center;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.4);
+    margin-top: 0.65rem;
+    line-height: 1.45;
+}
+
+/* Caixa de Destaques (Highlight Box) */
+.plan-highlight-box {
+    background: rgba(255, 255, 255, 0.015);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 16px;
+    padding: 1.25rem;
+    margin: 1.8rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.highlight-featured {
+    background: rgba(0, 230, 118, 0.015);
+    border: 1px solid rgba(0, 230, 118, 0.08);
+}
+
+.highlight-item {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    font-size: 0.85rem;
+    color: var(--text-main);
+    line-height: 1.4;
+}
+
+.highlight-item i {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+}
+
+.highlight-item.not-included {
+    opacity: 0.45;
+    text-decoration: line-through;
+}
+
+/* Lista Detalhada de Beneficios */
+.plan-features-list {
     border-top: 1px solid var(--border-color);
-    padding-top: 2rem;
-    margin-bottom: 2rem;
+    padding-top: 1.8rem;
     flex-grow: 1;
 }
 
-.features-group {
-    margin-bottom: 1.5rem;
-}
-
-.features-group h5 {
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--text-main);
-    margin-bottom: 1rem;
+.plan-features-list h5 {
+    font-size: 0.85rem;
     font-weight: 700;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 1.1rem;
+    letter-spacing: 0.05em;
 }
 
-.features-group ul {
+.plan-features-list ul {
     list-style: none;
     padding: 0;
 }
 
-.features-group ul li {
+.plan-features-list ul li {
     display: flex;
     align-items: flex-start;
-    gap: 0.6rem;
-    margin-bottom: 0.75rem;
-    font-size: 0.9rem;
+    gap: 0.65rem;
+    font-size: 0.85rem;
     color: var(--text-secondary);
-    line-height: 1.4;
+    line-height: 1.45;
+    margin-bottom: 0.75rem;
 }
 
-.features-group ul li i {
+.plan-features-list ul li i {
     flex-shrink: 0;
+    width: 15px;
+    height: 15px;
     margin-top: 2px;
 }
 
-.icon-green-check {
-    width: 16px;
-    height: 16px;
+/* Observacao e notas */
+.plans-note {
+    max-width: 900px;
+    margin: 2.5rem auto;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.4);
+    text-align: center;
+    line-height: 1.55;
+    font-style: italic;
+}
+
+/* Rodape da Secao: Hostinger Style (Bandeiras, Parcelamento, Garantia) */
+.plans-payment-footer {
+    border-top: 1px solid var(--border-color);
+    padding-top: 3.5rem;
+    margin-top: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+}
+
+.payment-installments {
+    font-size: 1.05rem;
+    color: var(--text-main);
+    letter-spacing: 0.01em;
+}
+
+.payment-installments strong {
     color: var(--accent-green);
 }
 
-.features-group.not-included h5 {
-    color: rgba(255, 255, 255, 0.4);
-}
-
-.features-group.not-included ul li {
-    color: rgba(255, 255, 255, 0.4);
-}
-
-.icon-red-x {
-    width: 16px;
-    height: 16px;
-    color: #ef4444;
-}
-
-.plan-footer {
-    border-top: 1px solid var(--border-color);
-    padding-top: 2rem;
-}
-
-.plan-support-msg {
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-    text-align: center;
-    margin-bottom: 1.5rem;
-    line-height: 1.4;
-}
-
-.plans-note {
-    max-width: 900px;
-    margin: 3rem auto 5rem;
-    font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.5);
-    text-align: center;
-    line-height: 1.6;
-}
-
-.plans-cta-box {
-    background: linear-gradient(135deg, rgba(1, 61, 44, 0.3) 0%, rgba(5, 5, 5, 0.8) 100%);
-    padding: 3.5rem 2rem;
-    border-radius: 24px;
-    text-align: center;
-    border: 1px solid rgba(0, 230, 118, 0.2);
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.plans-cta-box h3 {
-    font-size: 2rem;
-    color: var(--text-main);
-    margin-bottom: 1rem;
-}
-
-.plans-cta-box p {
-    color: var(--text-secondary);
-    max-width: 600px;
-    margin: 0 auto 2.5rem;
-    font-size: 1.1rem;
-    line-height: 1.6;
-}
-
-.btn-large {
-    padding: 1.2rem 2.5rem;
-    font-size: 1.1rem;
-    display: inline-flex;
+.payment-logos {
+    display: flex;
     align-items: center;
-    gap: 0.8rem;
-    font-weight: 700;
+    justify-content: center;
+    gap: 1.2rem;
+    flex-wrap: wrap;
 }
 
-.btn-icon {
+.payment-icon-wrapper {
+    width: 58px;
+    height: 38px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.35);
+    transition: var(--transition);
+}
+
+.payment-icon-wrapper:hover {
+    color: var(--accent-green);
+    border-color: rgba(0, 230, 118, 0.25);
+    background: rgba(0, 230, 118, 0.03);
+}
+
+.pix-wrapper svg {
     width: 20px;
     height: 20px;
 }
 
-/* Responsividade de Planos */
+.payment-guarantee {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.35);
+    max-width: 650px;
+    line-height: 1.55;
+}
+
+/* Chamada Final */
+.plans-cta-box {
+    background: linear-gradient(135deg, rgba(1, 61, 44, 0.2) 0%, rgba(5, 5, 5, 0.8) 100%);
+    padding: 4rem 2rem;
+    border-radius: 28px;
+    text-align: center;
+    border: 1px solid rgba(0, 230, 118, 0.15);
+    max-width: 900px;
+    margin: 4rem auto 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.plans-cta-box h3 {
+    font-size: 2.1rem;
+    color: var(--text-main);
+    margin-bottom: 1.1rem;
+}
+
+.plans-cta-box p {
+    color: var(--text-secondary);
+    max-width: 680px;
+    margin: 0 auto 2.8rem;
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+/* Responsividade Adaptada */
 @media (max-width: 1024px) {
     .plans-grid {
         grid-template-columns: 1fr;
-        gap: 3rem;
+        gap: 3.5rem;
+        max-width: 550px;
+        margin: 3rem auto;
     }
     
-    .plan-card-featured {
-        transform: none;
+    .plan-card {
+        padding: 3.2rem 1.8rem 2.2rem;
     }
-    
-    .plan-card-featured:hover {
-        transform: translateY(-8px);
+
+    .plan-desc {
+        min-height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .plans {
+        padding: 5rem 0;
+    }
+
+    .billing-toggle-wrapper {
+        margin-bottom: 2.5rem;
+    }
+
+    .billing-btn {
+        font-size: 0.82rem;
+        padding: 0.55rem 1.1rem;
+    }
+
+    .plans-cta-box {
+        padding: 3rem 1.2rem;
+    }
+
+    .plans-cta-box h3 {
+        font-size: 1.65rem;
     }
 }
