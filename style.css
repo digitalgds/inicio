@@ -1258,3 +1258,371 @@ footer {
         font-size: 1.65rem;
     }
 }
+
+
+/* ==========================================================================
+   Secao de Biblioteca de Modelos por Nicho
+   ========================================================================== */
+.templates-section {
+    padding: 8rem 0;
+    position: relative;
+    background-color: var(--primary-bg);
+}
+
+.templates-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    align-items: stretch;
+    margin-top: 4rem;
+}
+
+.category-card {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.category-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.category-icon-wrapper {
+    width: 48px;
+    height: 48px;
+    background: rgba(0, 230, 118, 0.08);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-green);
+    transition: var(--transition);
+}
+
+.category-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.category-card:hover .category-icon-wrapper {
+    background: var(--accent-green);
+    color: #000;
+    transform: rotate(5deg) scale(1.05);
+}
+
+.category-badge {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.3rem 0.7rem;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: var(--transition);
+}
+
+.category-card:hover .category-badge {
+    background: rgba(0, 230, 118, 0.1);
+    border-color: rgba(0, 230, 118, 0.3);
+    color: var(--accent-green);
+}
+
+.category-card-body h3 {
+    font-size: 1.25rem;
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.category-card-body p {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+
+.category-card-footer {
+    display: flex;
+    align-items: center;
+}
+
+.category-link {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: var(--transition);
+}
+
+.category-link i {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.3s ease;
+}
+
+.category-card:hover .category-link {
+    color: var(--accent-green);
+}
+
+.category-card:hover .category-link i {
+    transform: translateX(4px);
+}
+
+/* Modal Estilos */
+.template-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.template-modal.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.template-modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.template-modal-content {
+    background: #0c0c0c;
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    width: 100%;
+    max-width: 600px;
+    max-height: 85vh;
+    overflow-y: auto;
+    position: relative;
+    z-index: 10;
+    padding: 2.5rem;
+    transform: scale(0.95);
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 40px rgba(0, 230, 118, 0.05);
+}
+
+.template-modal.active .template-modal-content {
+    transform: scale(1);
+}
+
+/* Custom Scrollbar for Modal Content */
+.template-modal-content::-webkit-scrollbar {
+    width: 6px;
+}
+.template-modal-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+.template-modal-content::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+.template-modal-content::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-green);
+}
+
+.template-modal-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.template-modal-close:hover {
+    background: rgba(239, 68, 68, 0.1);
+    border-color: rgba(239, 68, 68, 0.3);
+    color: #ef4444;
+    transform: rotate(90deg);
+}
+
+.template-modal-close i {
+    width: 18px;
+    height: 18px;
+}
+
+.template-modal-header {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1.5rem;
+}
+
+.template-modal-icon-wrapper {
+    width: 56px;
+    height: 56px;
+    background: rgba(0, 230, 118, 0.1);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-green);
+}
+
+.modal-main-icon {
+    width: 28px;
+    height: 28px;
+}
+
+.template-modal-header-text h3 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text-main);
+}
+
+.template-modal-header-text p {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    margin-top: 0.1rem;
+}
+
+.template-modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+/* Modal Layout Items */
+.modal-layout-item {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: var(--transition);
+}
+
+.modal-layout-item:hover {
+    border-color: rgba(0, 230, 118, 0.15);
+    background: rgba(255, 255, 255, 0.03);
+    transform: translateY(-2px);
+}
+
+.layout-item-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.layout-item-desc {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.layout-item-action {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-view-model {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--accent-green);
+    color: #000;
+    text-decoration: none;
+    padding: 0.75rem 1.25rem;
+    border-radius: 8px;
+    font-size: 0.88rem;
+    font-weight: 700;
+    transition: var(--transition);
+}
+
+.btn-view-model:hover {
+    background: #00c866;
+    box-shadow: 0 4px 12px rgba(0, 230, 118, 0.2);
+    transform: translateY(-1px);
+}
+
+.btn-view-model i {
+    width: 15px;
+    height: 15px;
+}
+
+/* Responsividade de Biblioteca */
+@media (max-width: 1024px) {
+    .templates-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .templates-grid {
+        grid-template-columns: 1fr;
+        max-width: 450px;
+        margin: 3rem auto 0;
+    }
+
+    .template-modal-content {
+        padding: 1.8rem 1.2rem;
+        border-radius: 20px;
+    }
+    
+    .template-modal-header {
+        gap: 0.8rem;
+        margin-bottom: 1.5rem;
+        padding-bottom: 1.2rem;
+    }
+    
+    .template-modal-icon-wrapper {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+    }
+    
+    .modal-main-icon {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .template-modal-header-text h3 {
+        font-size: 1.25rem;
+    }
+    
+    .modal-layout-item {
+        padding: 1.2rem;
+    }
+}

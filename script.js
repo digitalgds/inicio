@@ -333,4 +333,227 @@
         });
     }
 
+
+    // =======================================================
+    // Biblioteca de Modelos por Nicho — Modal dinamico
+    // =======================================================
+    const TEMPLATES_DATA = [
+      {
+        "id": "grama-sintetica",
+        "title": "Grama Sintética",
+        "iconName": "sprout",
+        "sites": [
+          {
+            "name": "Quanta Grama Sintética",
+            "url": "https://quantagramasintetica.com/",
+            "desc": "Modelo focado em venda direta de revestimentos e gramas decorativas."
+          }
+        ]
+      },
+      {
+        "id": "advocacia",
+        "title": "Advocacia",
+        "iconName": "scale",
+        "sites": [
+          {
+            "name": "Rodrigo Parente Advogados",
+            "url": "https://rodrigoparenteadvogados.com/",
+            "desc": "Modelo tradicional com tom corporativo clássico."
+          },
+          {
+            "name": "Haline Cardoso",
+            "url": "https://halinecardoso.github.io/",
+            "desc": "Design moderno focado no posicionamento individual."
+          },
+          {
+            "name": "Borges Almeida Advogados",
+            "url": "https://baadvs.com.br/",
+            "desc": "Modelo moderno com estética premium focado em advocacia empresarial."
+          },
+          {
+            "name": "Weber Fernandes Advocacia",
+            "url": "https://weberfernandesadv.github.io/",
+            "desc": "Modelo moderno com posicionamento de autoridade e alta conversão jurídica."
+          }
+        ]
+      },
+      {
+        "id": "vidracaria",
+        "title": "Vidraçaria",
+        "iconName": "grid",
+        "sites": [
+          {
+            "name": "Vidraçaria JF",
+            "url": "https://vidracariajf.com/",
+            "desc": "Modelo de showroom comercial com conversão rápida no WhatsApp."
+          }
+        ]
+      },
+      {
+        "id": "locacoes",
+        "title": "Locações",
+        "iconName": "hammer",
+        "sites": [
+          {
+            "name": "Ricco Locações",
+            "url": "https://riccolocacoes.github.io/",
+            "desc": "Modelo estruturado com listagem de catálogo de produtos de locação."
+          }
+        ]
+      },
+      {
+        "id": "iluminacao",
+        "title": "Iluminação",
+        "iconName": "lightbulb",
+        "sites": [
+          {
+            "name": "Geometria da Luz",
+            "url": "https://geometriadaluz.github.io/",
+            "desc": "Modelo voltado a arquitetura e automação de iluminação."
+          },
+          {
+            "name": "La Luz Iluminação",
+            "url": "https://laluziluminacao.github.io/",
+            "desc": "Showroom de luminárias e pendentes decorativos."
+          },
+          {
+            "name": "Luz de Led",
+            "url": "https://luzdeled.github.io/",
+            "desc": "Showroom de fitas LED, perfis e iluminação moderna."
+          }
+        ]
+      },
+      {
+        "id": "eletromoveis",
+        "title": "Eletromóveis",
+        "iconName": "armchair",
+        "sites": [
+          {
+            "name": "Eletromóveis",
+            "url": "https://eletromoveis.github.io/",
+            "desc": "Modelo focado no varejo de móveis e eletrodomésticos sob medida."
+          }
+        ]
+      },
+      {
+        "id": "agencia",
+        "title": "Agência",
+        "iconName": "briefcase",
+        "sites": [
+          {
+            "name": "Cognição Digital",
+            "url": "https://cognicaodigittal.com/",
+            "desc": "Site oficial com o portfólio completo de ecossistemas digitais."
+          }
+        ]
+      },
+      {
+        "id": "consultoria",
+        "title": "Consultoria",
+        "iconName": "brain",
+        "sites": [
+          {
+            "name": "Midnight Executive Layout",
+            "url": "https://cognicaodigittal.com/",
+            "desc": "Modelo premium focado em posicionamento executivo de autoridade."
+          }
+        ]
+      },
+      {
+        "id": "psicologia",
+        "title": "Psicologia",
+        "iconName": "users",
+        "sites": [
+          {
+            "name": "Mylena Psicóloga",
+            "url": "https://mylenapsi.github.io/",
+            "desc": "Modelo focado em captação de pacientes para psicologia clínica."
+          },
+          {
+            "name": "Psicologia Clínica",
+            "url": "https://psicologiaclinica.github.io/",
+            "desc": "Layout suave focado em acolhimento e agendamentos de sessões."
+          }
+        ]
+      }
+    ];
+
+    const categoryCards = document.querySelectorAll('.category-card');
+    const templateModal  = document.getElementById('template-modal');
+    const modalOverlay   = document.getElementById('template-modal-overlay');
+    const modalCloseBtn  = document.getElementById('template-modal-close');
+    const modalTitle     = document.getElementById('modal-category-title');
+    const modalIconContainer = document.getElementById('modal-icon-container');
+    const modalLayoutsList   = document.getElementById('modal-layouts-list');
+
+    if (categoryCards.length > 0 && templateModal) {
+        
+        const openModal = (categoryData) => {
+            if (!categoryData) return;
+
+            // Injeta dados no Modal
+            modalTitle.textContent = categoryData.title;
+            
+            // Injeta icone Lucide
+            modalIconContainer.innerHTML = `<i data-lucide="${categoryData.iconName}" class="modal-main-icon"></i>`;
+
+            // Renderiza lista de modelos
+            modalLayoutsList.innerHTML = '';
+            categoryData.sites.forEach(site => {
+                const layoutElement = document.createElement('div');
+                layoutElement.className = 'modal-layout-item';
+                layoutElement.innerHTML = `
+                    <div class="layout-item-info">
+                        <h4 class="layout-item-title">${site.name}</h4>
+                        <p class="layout-item-desc">${site.desc}</p>
+                    </div>
+                    <div class="layout-item-action">
+                        <a href="${site.url}" target="_blank" rel="noopener noreferrer" class="btn-view-model">
+                            Visualizar Modelo <i data-lucide="external-link"></i>
+                        </a>
+                    </div>
+                `;
+                modalLayoutsList.appendChild(layoutElement);
+            });
+
+            // Recria os icones Lucide recem-injetados
+            lucide.createIcons();
+
+            // Ativa o modal
+            templateModal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Impede rolagem da pagina de fundo
+        };
+
+        const closeModal = () => {
+            templateModal.classList.remove('active');
+            document.body.style.overflow = ''; // Restaura rolagem da pagina
+        };
+
+        // Vincula cliques aos cards de categorias
+        categoryCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const categoryId = card.getAttribute('data-category');
+                const categoryData = TEMPLATES_DATA.find(item => item.id === categoryId);
+                openModal(categoryData);
+            });
+        });
+
+        // Fechar ao clicar no botao Fechar [X]
+        if (modalCloseBtn) {
+            modalCloseBtn.addEventListener('click', closeModal);
+        }
+
+        // Fechar ao clicar fora (no overlay)
+        if (modalOverlay) {
+            modalOverlay.addEventListener('click', closeModal);
+        }
+
+        // Fechar ao pressionar ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && templateModal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+    }
+
 });
