@@ -556,4 +556,55 @@
         });
     }
 
+
+    // =======================================================
+    // Menu Hamburguer Responsivo Premium
+    // =======================================================
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks   = document.getElementById('nav-links');
+
+    if (menuToggle && navLinks) {
+        const toggleMenu = () => {
+            const isActive = menuToggle.classList.contains('active');
+            
+            if (isActive) {
+                // Fechar menu
+                menuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+                menuToggle.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = ''; // Restaura rolagem
+            } else {
+                // Abrir menu
+                menuToggle.classList.add('active');
+                navLinks.classList.add('active');
+                menuToggle.setAttribute('aria-expanded', 'true');
+                document.body.style.overflow = 'hidden'; // Impede rolagem
+            }
+        };
+
+        const closeMenu = () => {
+            if (menuToggle.classList.contains('active')) {
+                menuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+                menuToggle.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+            }
+        };
+
+        menuToggle.addEventListener('click', toggleMenu);
+
+        // Fecha o menu automaticamente quando um link e clicado
+        const navAnchorLinks = navLinks.querySelectorAll('a');
+        navAnchorLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+
+        // Fecha o menu se a tela for redimensionada para desktop
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                closeMenu();
+            }
+        });
+    }
+
 });
