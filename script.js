@@ -216,102 +216,111 @@
     const btnMonthly = document.getElementById('billing-monthly');
     const btnAnnual  = document.getElementById('billing-annual');
 
-    const priceStarter = document.getElementById('price-starter');
-    const pricePro     = document.getElementById('price-pro');
+    const priceStarter    = document.getElementById('price-starter');
+    const pricePro        = document.getElementById('price-pro');
+    const priceUltra      = document.getElementById('price-ultra');
 
     const oldPriceStarter = document.getElementById('old-price-starter');
     const oldPricePro     = document.getElementById('old-price-pro');
+    const oldPriceUltra   = document.getElementById('old-price-ultra');
 
-    const termsStarter = document.getElementById('terms-starter');
-    const termsPro     = document.getElementById('terms-pro');
+    const termsStarter    = document.getElementById('terms-starter');
+    const termsPro        = document.getElementById('terms-pro');
+    const termsUltra      = document.getElementById('terms-ultra');
 
-    const btnStarter = document.getElementById('btn-starter');
-    const btnPro     = document.getElementById('btn-pro');
-    const tagPro     = document.getElementById('tag-pro');
+    const periodStarter   = document.getElementById('period-starter');
+    const periodPro       = document.getElementById('period-pro');
+
+    const btnStarter      = document.getElementById('btn-starter');
+    const btnPro          = document.getElementById('btn-pro');
+    const btnUltra        = document.getElementById('btn-ultra');
+
+    const tagPro          = document.getElementById('tag-pro');
 
     if (btnMonthly && btnAnnual) {
         
         function updatePricing(billingMode) {
-            // Adiciona classe de animacao (fade-out e scale)
-            const priceElements = [priceStarter, pricePro, oldPriceStarter, oldPricePro, termsStarter, termsPro];
+            // Elementos para aplicar transição suave de fade
+            const animateElements = [
+                priceStarter, pricePro, priceUltra, 
+                oldPriceStarter, oldPricePro, oldPriceUltra, 
+                termsStarter, termsPro, termsUltra, 
+                periodStarter, periodPro, tagPro
+            ];
             
-            priceElements.forEach(el => {
+            animateElements.forEach(el => {
                 if (el) {
                     el.style.opacity = '0';
-                    el.style.transform = 'scale(0.95)';
+                    el.style.transform = 'scale(0.98)';
                     el.style.transition = 'all 0.2s ease-in-out';
                 }
             });
 
             setTimeout(() => {
                 if (billingMode === 'annual') {
-                    // Ativa botao Anual
+                    // Ativa botão Anual
                     btnAnnual.classList.add('active');
                     btnMonthly.classList.remove('active');
 
-                    // Precos Anuais (Com 20% desconto)
-                    if (priceStarter) priceStarter.textContent = '77';
-                    if (pricePro)     pricePro.textContent = '77';
-
-                    // Mostra preco antigo riscado
+                    // --- STARTER ANUAL ---
+                    if (priceStarter) priceStarter.textContent = '147';
+                    if (periodStarter) periodStarter.textContent = '/mês';
                     if (oldPriceStarter) {
                         oldPriceStarter.style.visibility = 'visible';
-                        oldPriceStarter.textContent = 'De R$ 97/mês';
+                        oldPriceStarter.textContent = '12 mensalidades de R$ 147';
                     }
+                    if (termsStarter) termsStarter.textContent = 'Sem taxa de implantação • R$ 1.764 no primeiro ano';
+
+                    // --- PRO ANUAL ---
+                    if (pricePro) pricePro.textContent = '850';
+                    if (periodPro) periodPro.textContent = '/12 meses';
                     if (oldPricePro) {
                         oldPricePro.style.visibility = 'visible';
-                        oldPricePro.textContent = 'De R$ 97/mês';
+                        oldPricePro.textContent = 'R$ 287 de implantação';
                     }
-
-                    // Descricoes de faturamento
-                    if (termsStarter) termsStarter.textContent = 'Sem taxa de implantação • Cobrado anualmente: R$ 924';
-                    if (termsPro)     termsPro.textContent = 'R$ 197 de implantação única • Cobrado anualmente: R$ 924';
-
-                    // Links personalizados do WhatsApp para faturamento Anual
-                    if (btnStarter) btnStarter.href = "https://wa.me/5562998834515?text=Ol%C3%A1%2C%20Leonardo%21%20Tenho%20interesse%20no%20Plano%20Starter%20Anual%20da%20Digital%20GDS.%20Quero%20aproveitar%20o%20desconto%20anual.";
-                    if (btnPro)     btnPro.href = "https://wa.me/5562998834515?text=Ol%C3%A1%2C%20Leonardo%21%20Tenho%20interesse%20no%20Plano%20Pro%20Anual%20da%20Digital%20GDS.%20Quero%20aproveitar%20o%20desconto%20anual.";
-                    
-                    // Tag do plano Pro indicando o desconto
+                    if (termsPro) termsPro.textContent = 'Economia em comparação com 12 mensalidades do Plano Pro. • Total: R$ 1.137';
                     if (tagPro) {
-                        tagPro.textContent = 'Economize 20%';
-                        tagPro.classList.add('discount-green');
+                        tagPro.style.display = 'inline-block';
+                        tagPro.textContent = 'ECONOMIZE R$ 314';
                     }
+
+                    // --- ULTRA ANUAL ---
+                    if (priceUltra) priceUltra.textContent = 'ORÇAMENTO PERSONALIZADO';
+                    if (termsUltra) termsUltra.textContent = 'Implantação e serviços recorrentes definidos após análise.';
 
                 } else {
-                    // Ativa botao Mensal
+                    // Ativa botão Mensal
                     btnMonthly.classList.add('active');
                     btnAnnual.classList.remove('active');
 
-                    // Precos Mensais normais
-                    if (priceStarter) priceStarter.textContent = '97';
-                    if (pricePro)     pricePro.textContent = '97';
-
-                    // Oculta preco antigo riscado
+                    // --- STARTER MENSAL ---
+                    if (priceStarter) priceStarter.textContent = '147';
+                    if (periodStarter) periodStarter.textContent = '/mês';
                     if (oldPriceStarter) {
                         oldPriceStarter.style.visibility = 'hidden';
                         oldPriceStarter.innerHTML = '&nbsp;';
                     }
+                    if (termsStarter) termsStarter.textContent = 'Sem taxa de implantação • Contratação pelo período de 12 meses';
+
+                    // --- PRO MENSAL ---
+                    if (pricePro) pricePro.textContent = '97';
+                    if (periodPro) periodPro.textContent = '/mês';
                     if (oldPricePro) {
-                        oldPricePro.style.visibility = 'hidden';
-                        oldPricePro.innerHTML = '&nbsp;';
+                        oldPricePro.style.visibility = 'visible';
+                        oldPricePro.textContent = 'R$ 287 de implantação única';
                     }
-
-                    // Descricoes de faturamento
-                    if (termsStarter) termsStarter.textContent = 'Sem taxa de implantação • Cobrado mensalmente';
-                    if (termsPro)     termsPro.textContent = 'R$ 197 de implantação única • Cobrado mensalmente';
-
-                    // Links personalizados do WhatsApp para faturamento Mensal
-                    if (btnStarter) btnStarter.href = "https://wa.me/5562998834515?text=Ol%C3%A1%2C%20Leonardo%21%20Tenho%20interesse%20no%20Plano%20Starter%20Mensal%20da%20Digital%20GDS.%20Quero%20come%C3%A7ar%20com%20uma%20presen%C3%A7a%20digital%20b%C3%A1sica.";
-                    if (btnPro)     btnPro.href = "https://wa.me/5562998834515?text=Ol%C3%A1%2C%20Leonardo%21%20Tenho%20interesse%20no%20Plano%20Pro%20Mensal%20da%20Digital%20GDS.%20Quero%20minha%20presen%C3%A7a%20com%20dom%C3%ADnio%20pr%C3%B3prio.";
-
-                    // Tag do plano Pro normal
+                    if (termsPro) termsPro.textContent = 'Primeira mensalidade após 30 dias • Total no 1º ano: R$ 1.451';
                     if (tagPro) {
-                        tagPro.textContent = 'Popular';
+                        tagPro.style.display = 'none';
                     }
+
+                    // --- ULTRA MENSAL ---
+                    if (priceUltra) priceUltra.textContent = 'ORÇAMENTO PERSONALIZADO';
+                    if (termsUltra) termsUltra.textContent = 'Investimento composto por implantação, recorrentes e anúncios.';
                 }
 
-                // Finaliza animacao com fade-in e retorno ao tamanho original
-                priceElements.forEach(el => {
+                // Finaliza animação com fade-in e retorno ao tamanho original
+                animateElements.forEach(el => {
                     if (el) {
                         el.style.opacity = '1';
                         el.style.transform = 'scale(1)';
@@ -332,7 +341,6 @@
             }
         });
     }
-
 
     // =======================================================
     // Biblioteca de Modelos por Nicho — Modal dinamico
