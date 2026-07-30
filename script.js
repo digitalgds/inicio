@@ -238,6 +238,10 @@
     const tagPro          = document.getElementById('tag-pro');
     const tagStarter      = document.getElementById('tag-starter');
 
+    const descStarter     = document.getElementById('desc-starter');
+    const descPro         = document.getElementById('desc-pro');
+    const descUltra       = document.getElementById('desc-ultra');
+
     if (btnMonthly && btnAnnual) {
         
         function updatePricing(billingMode) {
@@ -246,13 +250,15 @@
                 priceStarter, pricePro, priceUltra, 
                 oldPriceStarter, oldPricePro, oldPriceUltra, 
                 termsStarter, termsPro, termsUltra, 
-                periodStarter, periodPro, tagPro, tagStarter
+                periodStarter, periodPro, tagPro, tagStarter,
+                descStarter, descPro, descUltra,
+                btnStarter, btnPro, btnUltra
             ];
             
             animateElements.forEach(el => {
                 if (el) {
                     el.style.opacity = '0';
-                    el.style.transform = 'scale(0.98)';
+                    el.style.transform = 'scale(0.99)';
                     el.style.transition = 'all 0.15s ease-in-out';
                 }
             });
@@ -263,43 +269,56 @@
                     btnAnnual.classList.add('active');
                     btnMonthly.classList.remove('active');
 
-                    // --- STARTER ANUAL (Mantido temporariamente o original do commit 8c39e60) ---
-                    if (priceStarter) priceStarter.textContent = '77';
-                    if (periodStarter) periodStarter.textContent = '/mês';
+                    // --- STARTER ANUAL ---
+                    if (priceStarter) priceStarter.textContent = '850';
+                    if (periodStarter) periodStarter.textContent = '/ano';
                     if (oldPriceStarter) {
                         oldPriceStarter.style.visibility = 'visible';
-                        oldPriceStarter.textContent = 'De R$ 97/mês';
+                        oldPriceStarter.style.textDecoration = 'none';
+                        oldPriceStarter.textContent = 'Economize R$ 914';
                     }
-                    if (termsStarter) termsStarter.textContent = 'Sem taxa de implantação • Cobrado anualmente: R$ 924';
-                    if (tagStarter) tagStarter.textContent = 'Sem fidelidade';
-                    if (btnStarter) btnStarter.href = "https://wa.me/5562998834515?text=Ol%C3%A1%2C%20Leonardo%21%20Tenho%20interesse%20no%20Plano%20Starter%20Anual%20da%20Digital%20GDS.%20Quero%20aproveitar%20o%20desconto%20anual.";
+                    if (termsStarter) termsStarter.textContent = 'Hospedagem inclusa por 12 meses • R$ 850 à vista';
+                    if (tagStarter) tagStarter.textContent = 'MELHOR VALOR ANUAL';
+                    if (descStarter) descStarter.textContent = 'Ideal para profissionais e pequenos negócios que querem contratar uma landing page profissional por 12 meses com pagamento anual e sem domínio próprio.';
+                    if (btnStarter) {
+                        btnStarter.textContent = 'QUERO CONTRATAR O STARTER ANUAL';
+                        btnStarter.href = "https://wa.me/5562998834515?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20Plano%20Starter%20anual%20da%20Digital%20GDS%2C%20no%20valor%20de%20R%24%20850%20por%2012%20meses%2C%20e%20gostaria%20de%20receber%20mais%20informa%C3%A7%C3%B5es.";
+                    }
 
-                    // --- PRO ANUAL (Mantido temporariamente o original do commit 8c39e60) ---
-                    if (pricePro) pricePro.textContent = '77';
-                    if (periodPro) periodPro.textContent = '/mês';
+                    // --- PRO ANUAL ---
+                    if (pricePro) pricePro.textContent = '850';
+                    if (periodPro) periodPro.textContent = '/ano';
                     if (oldPricePro) {
                         oldPricePro.style.visibility = 'visible';
-                        oldPricePro.style.textDecoration = 'line-through';
-                        oldPricePro.textContent = 'De R$ 97/mês';
+                        oldPricePro.style.textDecoration = 'none';
+                        oldPricePro.textContent = 'R$ 287 de implantação';
                     }
-                    if (termsPro) termsPro.textContent = 'R$ 197 de implantação única • Cobrado anualmente: R$ 924';
+                    if (termsPro) termsPro.textContent = 'Economize R$ 314 • Total do 1º ano: R$ 1.137';
                     if (tagPro) {
                         tagPro.style.display = 'inline-block';
-                        tagPro.textContent = 'Economize 20%';
+                        tagPro.textContent = 'Economize R$ 314';
                     }
-                    if (btnPro) btnPro.href = "https://wa.me/5562998834515?text=Ol%C3%A1%2C%20Leonardo%21%20Tenho%20interesse%20no%20Plano%20Pro%20Anual%20da%20Digital%20GDS.%20Quero%20aproveitar%20o%20desconto%20anual.";
+                    if (descPro) descPro.textContent = 'Ideal para empresas que querem uma landing page com domínio próprio, endereço profissional e pagamento anual da hospedagem.';
+                    if (btnPro) {
+                        btnPro.textContent = 'QUERO O PLANO PRO ANUAL';
+                        btnPro.href = "https://wa.me/5562998834515?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20Plano%20Pro%20anual%20da%20Digital%20GDS%2C%20com%20implanta%C3%A7%C3%A3o%20de%20R%24%20287%20e%20anuidade%20de%20R%24%20850%2C%20e%20gostaria%20de%20receber%20mais%20informa%C3%A7%C3%B5es.";
+                    }
 
-                    // --- ULTRA ANUAL (Mantido temporariamente o original do commit 8c39e60) ---
-                    if (priceUltra) priceUltra.textContent = 'Sob consulta';
-                    if (termsUltra) termsUltra.textContent = 'Planejamento e tráfego sob demanda';
-                    if (btnUltra) btnUltra.href = "https://wa.me/5562998834515?text=Ol%C3%A1%2C%20Leonardo%21%20Tenho%20interesse%20no%20Plano%20Ultra%20da%20Digital%20GDS.%20Quero%20uma%20an%C3%A1lise%20personalizada%20de%20estrutura%20completa.";
+                    // --- ULTRA ANUAL ---
+                    if (priceUltra) priceUltra.textContent = 'ORÇAMENTO PERSONALIZADO';
+                    if (termsUltra) termsUltra.textContent = 'Condições anuais definidas após diagnóstico';
+                    if (descUltra) descUltra.textContent = 'Ideal para empresas que precisam de uma estrutura digital personalizada, com implantação e serviços recorrentes definidos conforme a necessidade do negócio.';
+                    if (btnUltra) {
+                        btnUltra.textContent = 'SOLICITAR PROPOSTA PERSONALIZADA';
+                        btnUltra.href = "https://wa.me/5562998834515?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20Plano%20Ultra%20da%20Digital%20GDS%20e%20gostaria%20de%20solicitar%20uma%20proposta%20personalizada%20para%20o%20meu%20neg%C3%B3cio.";
+                    }
 
                 } else {
                     // Ativa botão Mensal
                     btnMonthly.classList.add('active');
                     btnAnnual.classList.remove('active');
 
-                    // --- STARTER MENSAL (Atualizado com os novos valores) ---
+                    // --- STARTER MENSAL ---
                     if (priceStarter) priceStarter.textContent = '147';
                     if (periodStarter) periodStarter.textContent = '/mês';
                     if (oldPriceStarter) {
@@ -308,9 +327,13 @@
                     }
                     if (termsStarter) termsStarter.textContent = 'Sem taxa de implantação • Durante 12 meses';
                     if (tagStarter) tagStarter.textContent = 'COMECE SEM ENTRADA';
-                    if (btnStarter) btnStarter.href = "https://wa.me/5562998834515?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20Plano%20Starter%20mensal%20da%20Digital%20GDS.%20Gostaria%20de%20receber%20mais%20informa%C3%A7%C3%B5es%20sobre%20a%20landing%20page%20sem%20taxa%20de%20implanta%C3%A7%C3%A3o.";
+                    if (descStarter) descStarter.textContent = 'Ideal para profissionais e pequenos negócios que querem começar com uma landing page profissional sem pagar taxa inicial.';
+                    if (btnStarter) {
+                        btnStarter.textContent = 'QUERO COMEÇAR SEM ENTRADA';
+                        btnStarter.href = "https://wa.me/5562998834515?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20Plano%20Starter%20mensal%20da%20Digital%20GDS.%20Gostaria%20de%20receber%20mais%20informa%C3%A7%C3%B5es%20sobre%20a%20landing%20page%20sem%20taxa%20de%20implanta%C3%A7%C3%A3o.";
+                    }
 
-                    // --- PRO MENSAL (Atualizado com os novos valores) ---
+                    // --- PRO MENSAL ---
                     if (pricePro) pricePro.textContent = '97';
                     if (periodPro) periodPro.textContent = '/mês';
                     if (oldPricePro) {
@@ -323,12 +346,20 @@
                         tagPro.style.display = 'inline-block';
                         tagPro.textContent = 'Popular';
                     }
-                    if (btnPro) btnPro.href = "https://wa.me/5562998834515?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20Plano%20Pro%20mensal%20da%20Digital%20GDS.%20Gostaria%20de%20receber%20mais%20informa%C3%A7%C3%B5es%20sobre%20a%20landing%20page%20com%20dom%C3%ADnio%20pr%C3%B3prio.";
+                    if (descPro) descPro.textContent = 'Ideal para empresas que querem uma landing page com domínio próprio, endereço profissional na internet e uma mensalidade mais acessível.';
+                    if (btnPro) {
+                        btnPro.textContent = 'QUERO MEU DOMÍNIO PRÓPRIO';
+                        btnPro.href = "https://wa.me/5562998834515?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20Plano%20Pro%20mensal%20da%20Digital%20GDS.%20Gostaria%20de%20receber%20mais%20informa%C3%A7%C3%B5es%20sobre%20a%20landing%20page%20com%20dom%C3%ADnio%20pr%C3%B3prio.";
+                    }
 
-                    // --- ULTRA MENSAL (Atualizado com os novos valores) ---
+                    // --- ULTRA MENSAL ---
                     if (priceUltra) priceUltra.textContent = 'ORÇAMENTO PERSONALIZADO';
                     if (termsUltra) termsUltra.textContent = 'O investimento será definido após uma análise da necessidade do negócio.';
-                    if (btnUltra) btnUltra.href = "https://wa.me/5562998834515?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20Plano%20Ultra%20da%20Digital%20GDS%20e%20gostaria%20de%20solicitar%20uma%20an%C3%A1lise%20personalizada%20para%20o%20meu%20neg%C3%B3cio.";
+                    if (descUltra) descUltra.textContent = 'Ideal para empresas que precisam de uma estrutura digital desenvolvida conforme seus objetivos, produtos, serviços e necessidade de crescimento.';
+                    if (btnUltra) {
+                        btnUltra.textContent = 'SOLICITAR ANÁLISE PERSONALIZADA';
+                        btnUltra.href = "https://wa.me/5562998834515?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20Plano%20Ultra%20da%20Digital%20GDS%20e%20gostaria%20de%20solicitar%20uma%20an%C3%A1lise%20personalizada%20para%20o%20meu%20neg%C3%B3cio.";
+                    }
                 }
 
                 // Finaliza animação com fade-in e retorno ao tamanho original
