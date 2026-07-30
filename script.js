@@ -211,42 +211,93 @@
     }
 
     // =======================================================
-    // Seletor Pro Card (Mensal / Anual) — Digital GDS
+    // Seletor de Faturamento Interativo (Toggle Mensal/Anual)
     // =======================================================
-    const proToggleMonthly = document.getElementById('pro-toggle-monthly');
-    const proToggleAnnual  = document.getElementById('pro-toggle-annual');
-    const proPriceMonthlyView = document.getElementById('pro-price-monthly-view');
-    const proPriceAnnualView  = document.getElementById('pro-price-annual-view');
-    const btnProCard = document.getElementById('btn-pro');
+    const btnMonthly = document.getElementById('billing-monthly');
+    const btnAnnual  = document.getElementById('billing-annual');
 
-    if (proToggleMonthly && proToggleAnnual && proPriceMonthlyView && proPriceAnnualView) {
-        proToggleMonthly.addEventListener('click', () => {
-            if (!proToggleMonthly.classList.contains('active')) {
-                proToggleMonthly.classList.add('active');
-                proToggleAnnual.classList.remove('active');
-                
-                proPriceMonthlyView.classList.add('active');
-                proPriceAnnualView.classList.remove('active');
-                
-                // Atualiza o link do WhatsApp para a opcao Mensal
-                if (btnProCard) {
-                    btnProCard.href = "https://wa.me/5562998834515?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20Plano%20Pro%20da%20Digital%20GDS%20e%20gostaria%20de%20receber%20mais%20informa%C3%A7%C3%B5es%20sobre%20a%20landing%20page%20com%20dom%C3%ADnio%20pr%C3%B3prio.";
+    const priceProRegular = document.getElementById('pro-price-regular');
+    const priceProAnnual  = document.getElementById('pro-price-annual');
+    const termsPro        = document.getElementById('terms-pro');
+    const btnPro          = document.getElementById('btn-pro');
+    const tagPro          = document.getElementById('tag-pro');
+
+    if (btnMonthly && btnAnnual) {
+        
+        function updatePricing(billingMode) {
+            // Elementos para aplicar transição suave de fade
+            const animateElements = [priceProRegular, priceProAnnual, termsPro, tagPro];
+            
+            animateElements.forEach(el => {
+                if (el) {
+                    el.style.opacity = '0';
+                    el.style.transform = 'scale(0.98)';
+                    el.style.transition = 'all 0.2s ease-in-out';
                 }
+            });
+
+            setTimeout(() => {
+                if (billingMode === 'annual') {
+                    // Ativa botão Anual
+                    btnAnnual.classList.add('active');
+                    btnMonthly.classList.remove('active');
+
+                    // Alterna preços Pro para Anual
+                    if (priceProRegular) priceProRegular.style.display = 'none';
+                    if (priceProAnnual)  priceProAnnual.style.display = 'flex';
+
+                    // Termos Pro Anual
+                    if (termsPro) termsPro.textContent = 'R$ 287 de implantação • Total no 1º ano: R$ 1.137';
+
+                    // Tag Pro Anual
+                    if (tagPro) {
+                        tagPro.style.display = 'inline-block';
+                        tagPro.textContent = 'Economize R$314';
+                    }
+
+                    // WhatsApp link Pro Anual
+                    if (btnPro) btnPro.href = "https://wa.me/5562998834515?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20Plano%20Pro%20Anual%20da%20Digital%20GDS%20e%20gostaria%20de%20receber%20mais%20informa%C3%A7%C3%B5es%20sobre%20a%20landing%20page%20com%20dom%C3%ADnio%20pr%C3%B3prio.";
+
+                } else {
+                    // Ativa botão Mensal
+                    btnMonthly.classList.add('active');
+                    btnAnnual.classList.remove('active');
+
+                    // Alterna preços Pro para Mensal
+                    if (priceProRegular) priceProRegular.style.display = 'flex';
+                    if (priceProAnnual)  priceProAnnual.style.display = 'none';
+
+                    // Termos Pro Mensal
+                    if (termsPro) termsPro.textContent = 'R$ 287 de implantação • Cobrado mensalmente';
+
+                    // Tag Pro Mensal
+                    if (tagPro) {
+                        tagPro.style.display = 'none';
+                    }
+
+                    // WhatsApp link Pro Mensal
+                    if (btnPro) btnPro.href = "https://wa.me/5562998834515?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20Plano%20Pro%20da%20Digital%20GDS%20e%20gostaria%20de%20receber%20mais%20informa%C3%A7%C3%B5es%20sobre%20a%20landing%20page%20com%20dom%C3%ADnio%20pr%C3%B3prio.";
+                }
+
+                // Finaliza animação com fade-in e retorno ao tamanho original
+                animateElements.forEach(el => {
+                    if (el) {
+                        el.style.opacity = '1';
+                        el.style.transform = 'scale(1)';
+                    }
+                });
+            }, 200);
+        }
+
+        btnMonthly.addEventListener('click', () => {
+            if (!btnMonthly.classList.contains('active')) {
+                updatePricing('monthly');
             }
         });
 
-        proToggleAnnual.addEventListener('click', () => {
-            if (!proToggleAnnual.classList.contains('active')) {
-                proToggleAnnual.classList.add('active');
-                proToggleMonthly.classList.remove('active');
-                
-                proPriceAnnualView.classList.add('active');
-                proPriceMonthlyView.classList.remove('active');
-                
-                // Atualiza o link do WhatsApp para a opcao Anual
-                if (btnProCard) {
-                    btnProCard.href = "https://wa.me/5562998834515?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20Plano%20Pro%20Anual%20da%20Digital%20GDS%20e%20gostaria%20de%20receber%20mais%20informa%C3%A7%C3%B5es%20sobre%20a%20landing%20page%20com%20dom%C3%ADnio%20pr%C3%B3prio.";
-                }
+        btnAnnual.addEventListener('click', () => {
+            if (!btnAnnual.classList.contains('active')) {
+                updatePricing('annual');
             }
         });
     }

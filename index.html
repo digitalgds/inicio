@@ -378,6 +378,7 @@
 
 
     <!-- Seção de Planos de Criação de Sites -->
+    <!-- Seção de Planos de Criação de Sites -->
     <section class="plans" id="planos">
         <div class="glow-green" style="top: 30%; right: 10%;"></div>
         <div class="container">
@@ -386,30 +387,40 @@
                 <p>Comece com uma landing page profissional, avance para um domínio próprio ou solicite uma estrutura personalizada para ampliar sua presença digital.</p>
             </div>
 
+            <!-- Seletor de Faturamento Interativo (Toggle Mensal/Anual) -->
+            <div class="billing-toggle-wrapper" data-aos="fade-up">
+                <div class="billing-toggle-container">
+                    <button class="billing-btn active" id="billing-monthly">Faturamento Mensal</button>
+                    <button class="billing-btn" id="billing-annual">
+                        Faturamento Anual <span class="discount-pill">Economize R$314</span>
+                    </button>
+                </div>
+            </div>
+
             <div class="plans-grid">
                 <!-- CARD 1 — PLANO STARTER -->
                 <div class="card plan-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="plan-card-tag-wrapper">
-                        <span class="plan-card-tag discount-green">Comece sem entrada</span>
+                        <span class="plan-card-tag">Comece sem entrada</span>
                     </div>
                     <div class="plan-header">
                         <h3 class="plan-name">Starter</h3>
                         <p class="plan-tagline">Landing Page Essencial</p>
                         
                         <div class="plan-price-container">
-                            <span class="plan-price-old-custom">Sem taxa de implantação</span>
+                            <span class="plan-price-old" id="old-price-starter" style="visibility: hidden;">&nbsp;</span>
                             <div class="plan-price">
                                 <span class="price-symbol">R$</span>
-                                <span class="price-value">147</span>
+                                <span class="price-value" id="price-starter">147</span>
                                 <span class="price-period">/mês</span>
                             </div>
-                            <span class="plan-billing-terms">Durante 12 meses</span>
                         </div>
                         
                         <p class="plan-desc">Ideal para profissionais e pequenos negócios que querem começar com uma landing page profissional sem pagar taxa inicial.</p>
                         
                         <!-- CTA Button no Topo -->
-                        <a href="https://wa.me/5562998834515?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20Plano%20Starter%20da%20Digital%20GDS%20e%20gostaria%20de%20receber%20mais%20informa%C3%A7%C3%B5es%20sobre%20a%20landing%20page%20sem%20taxa%20de%20implanta%C3%A7%C3%A3o." class="btn btn-outline-plan full-width" target="_blank" rel="noopener noreferrer">Quero começar sem entrada</a>
+                        <a href="https://wa.me/5562998834515?text=Ol%C3%A1%2C%20Leonardo%21%20Tenho%20interesse%20no%20Plano%20Starter%20da%20Digital%20GDS%20e%20gostaria%20de%20receber%20mais%20informa%C3%A7%C3%B5es%20sobre%20a%20landing%20page%20sem%20taxa%20de%20implanta%C3%A7%C3%A3o." class="btn btn-outline-plan full-width" id="btn-starter" target="_blank" rel="noopener noreferrer">Quero começar sem entrada</a>
+                        <span class="plan-billing-terms" id="terms-starter">Sem taxa de implantação • Cobrado mensalmente</span>
                     </div>
 
                     <!-- Lista de Recursos Diretamente Visível -->
@@ -465,49 +476,36 @@
                 <!-- CARD 2 — PLANO PRO -->
                 <div class="card plan-card plan-card-featured" data-aos="fade-up" data-aos-delay="200">
                     <div class="plan-badge-top">MAIS RECOMENDADO</div>
-                    
+                    <div class="plan-card-tag-wrapper">
+                        <span class="plan-card-tag discount-green" id="tag-pro" style="display: none;">Economize R$314</span>
+                    </div>
                     <div class="plan-header">
                         <h3 class="plan-name">Pro</h3>
                         <p class="plan-tagline">Landing Page com Domínio Próprio</p>
                         
-                        <!-- Seletor de Faturamento Exclusivo do Plano Pro -->
-                        <div class="pro-billing-toggle">
-                            <button class="pro-toggle-btn active" id="pro-toggle-monthly">Mensal</button>
-                            <button class="pro-toggle-btn" id="pro-toggle-annual">
-                                Anual <span class="pro-discount-pill">Economize R$314</span>
-                            </button>
-                        </div>
-                        
-                        <div class="pro-price-block">
-                            <div class="pro-price-setup">R$ 287 de implantação</div>
+                        <div class="plan-price-container">
+                            <span class="plan-price-old" id="old-price-pro" style="visibility: hidden;">&nbsp;</span>
                             
-                            <!-- Visualização da Opção Mensal (Ativa por padrão) -->
-                            <div id="pro-price-monthly-view" class="pro-price-view active">
-                                <div class="plan-price">
-                                    <span class="price-symbol">R$</span>
-                                    <span class="price-value">97</span>
-                                    <span class="price-period">/mês</span>
-                                </div>
-                                <span class="plan-billing-terms">Primeira mensalidade após 30 dias</span>
-                                <span class="plan-billing-terms">Total do primeiro ano (implantação + mensalidades): R$1.451</span>
+                            <!-- Visualização Mensal por padrão -->
+                            <div class="plan-price" id="pro-price-regular">
+                                <span class="price-symbol">R$</span>
+                                <span class="price-value" id="price-pro">97</span>
+                                <span class="price-period">/mês</span>
                             </div>
                             
-                            <!-- Visualização da Opção Anual (Oculta por padrão) -->
-                            <div id="pro-price-annual-view" class="pro-price-view">
-                                <div class="plan-price-annual-total">
-                                    <span class="price-symbol">R$</span>
-                                    <span class="price-value">850</span>
-                                    <span class="price-period">/12 meses</span>
-                                </div>
-                                <span class="plan-billing-terms">Valor único correspondente ao período de 12 meses</span>
-                                <span class="plan-billing-terms">Total do primeiro ano (implantação + anuidade): R$1.137</span>
+                            <!-- Visualização Anual oculta -->
+                            <div class="plan-price" id="pro-price-annual" style="display: none;">
+                                <span class="price-symbol">R$</span>
+                                <span class="price-value">850</span>
+                                <span class="price-period">/12 meses</span>
                             </div>
                         </div>
                         
                         <p class="plan-desc">Ideal para empresas que querem um endereço profissional na internet, domínio próprio e uma mensalidade mais acessível.</p>
                         
                         <!-- CTA Button no Topo (Destaque Verde Sólido) -->
-                        <a href="https://wa.me/5562998834515?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20Plano%20Pro%20da%20Digital%20GDS%20e%20gostaria%20de%20receber%20mais%20informa%C3%A7%C3%B5es%20sobre%20a%20landing%20page%20com%20dom%C3%ADnio%20pr%C3%B3prio." class="btn btn-solid-plan full-width" id="btn-pro" target="_blank" rel="noopener noreferrer">Quero meu domínio próprio</a>
+                        <a href="https://wa.me/5562998834515?text=Ol%C3%A1%2C%20Leonardo%21%20Tenho%20interesse%20no%20Plano%20Pro%20da%20Digital%20GDS%20e%20gostaria%20de%20receber%20mais%20informa%C3%A7%C3%B5es%20sobre%20a%20landing%20page%20com%20dom%C3%ADnio%20pr%C3%B3prio." class="btn btn-solid-plan full-width" id="btn-pro" target="_blank" rel="noopener noreferrer">Quero meu domínio próprio</a>
+                        <span class="plan-billing-terms" id="terms-pro">R$ 287 de implantação • Cobrado mensalmente</span>
                     </div>
 
                     <!-- Lista de Recursos Diretamente Visível -->
@@ -575,17 +573,17 @@
                         <p class="plan-tagline">Estrutura Digital Sob Medida</p>
                         
                         <div class="plan-price-container">
-                            <span class="plan-price-old-custom">&nbsp;</span>
+                            <span class="plan-price-old" style="visibility: hidden;">&nbsp;</span>
                             <div class="plan-price">
-                                <span class="price-value-consult">Sob consulta</span>
+                                <span class="price-value-consult">Orçamento personalizado</span>
                             </div>
-                            <span class="plan-billing-terms">Orçamento personalizado</span>
                         </div>
                         
                         <p class="plan-desc">Ideal para empresas que precisam de uma estrutura digital desenvolvida de acordo com seus objetivos, produtos, serviços e necessidade de crescimento.</p>
                         
                         <!-- CTA Button no Topo -->
-                        <a href="https://wa.me/5562998834515?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20Plano%20Ultra%20da%20Digital%20GDS%20e%20gostaria%20de%20solicitar%20uma%20an%C3%A1lise%20personalizada%20para%20o%20meu%20neg%C3%B3cio." class="btn btn-outline-plan full-width" target="_blank" rel="noopener noreferrer">Solicitar análise personalizada</a>
+                        <a href="https://wa.me/5562998834515?text=Ol%C3%A1%2C%20Leonardo%21%20Tenho%20interesse%20no%20Plano%20Ultra%20da%20Digital%20GDS%20e%20gostaria%20de%20solicitar%20uma%20an%C3%A1lise%20personalizada%20para%20o%20meu%20neg%C3%B3cio." class="btn btn-outline-plan full-width" target="_blank" rel="noopener noreferrer">Solicitar análise personalizada</a>
+                        <span class="plan-billing-terms">Planejamento e tráfego sob demanda</span>
                     </div>
 
                     <!-- Elementos de Investimento diretamente visíveis -->
@@ -672,7 +670,7 @@
             <div class="plans-cta-box" data-aos="zoom-in">
                 <h3>Ainda não sabe qual plano escolher?</h3>
                 <p>Converse com a Digital GDS pelo WhatsApp e receba uma orientação sobre a solução mais adequada para o momento da sua empresa.</p>
-                <a href="https://wa.me/5562998834515?text=Ol%C3%A1%21%20Conheci%20os%20planos%20da%20Digital%20GDS%20e%20gostaria%20de%20ajuda%20para%20escolher%20a%20melhor%20op%C3%A7%C3%A3o%20para%20o%20meu%20neg%C3%B3cio." class="btn btn-primary btn-large" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/5562998834515?text=Ol%C3%A1%2C%20Leonardo%21%20Tenho%20interesse%20no%20Plano%20Starter%20da%20Digital%20GDS%20e%20gostaria%20de%20receber%20mais%20informa%C3%A7%C3%B5es%20sobre%20a%20landing%20page%20sem%20taxa%20de%20implanta%C3%A7%C3%A3o." class="btn btn-primary btn-large" id="btn-final-cta" target="_blank" rel="noopener noreferrer">
                     <i data-lucide="message-circle" class="btn-icon"></i> Falar com a Digital GDS
                 </a>
             </div>
