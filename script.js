@@ -236,6 +236,7 @@
     const btnUltra        = document.getElementById('btn-ultra');
 
     const tagPro          = document.getElementById('tag-pro');
+    const tagStarter      = document.getElementById('tag-starter');
 
     if (btnMonthly && btnAnnual) {
         
@@ -245,14 +246,14 @@
                 priceStarter, pricePro, priceUltra, 
                 oldPriceStarter, oldPricePro, oldPriceUltra, 
                 termsStarter, termsPro, termsUltra, 
-                periodStarter, periodPro, tagPro
+                periodStarter, periodPro, tagPro, tagStarter
             ];
             
             animateElements.forEach(el => {
                 if (el) {
                     el.style.opacity = '0';
                     el.style.transform = 'scale(0.98)';
-                    el.style.transition = 'all 0.2s ease-in-out';
+                    el.style.transition = 'all 0.15s ease-in-out';
                 }
             });
 
@@ -262,61 +263,72 @@
                     btnAnnual.classList.add('active');
                     btnMonthly.classList.remove('active');
 
-                    // --- STARTER ANUAL ---
-                    if (priceStarter) priceStarter.textContent = '147';
+                    // --- STARTER ANUAL (Mantido temporariamente o original do commit 8c39e60) ---
+                    if (priceStarter) priceStarter.textContent = '77';
                     if (periodStarter) periodStarter.textContent = '/mês';
                     if (oldPriceStarter) {
                         oldPriceStarter.style.visibility = 'visible';
-                        oldPriceStarter.textContent = '12 mensalidades de R$ 147';
+                        oldPriceStarter.textContent = 'De R$ 97/mês';
                     }
-                    if (termsStarter) termsStarter.textContent = 'Sem taxa de implantação • R$ 1.764 no primeiro ano';
+                    if (termsStarter) termsStarter.textContent = 'Sem taxa de implantação • Cobrado anualmente: R$ 924';
+                    if (tagStarter) tagStarter.textContent = 'Sem fidelidade';
+                    if (btnStarter) btnStarter.href = "https://wa.me/5562998834515?text=Ol%C3%A1%2C%20Leonardo%21%20Tenho%20interesse%20no%20Plano%20Starter%20Anual%20da%20Digital%20GDS.%20Quero%20aproveitar%20o%20desconto%20anual.";
 
-                    // --- PRO ANUAL ---
-                    if (pricePro) pricePro.textContent = '850';
-                    if (periodPro) periodPro.textContent = '/12 meses';
+                    // --- PRO ANUAL (Mantido temporariamente o original do commit 8c39e60) ---
+                    if (pricePro) pricePro.textContent = '77';
+                    if (periodPro) periodPro.textContent = '/mês';
                     if (oldPricePro) {
                         oldPricePro.style.visibility = 'visible';
-                        oldPricePro.textContent = 'R$ 287 de implantação';
+                        oldPricePro.style.textDecoration = 'line-through';
+                        oldPricePro.textContent = 'De R$ 97/mês';
                     }
-                    if (termsPro) termsPro.textContent = 'Economia em comparação com 12 mensalidades do Plano Pro. • Total: R$ 1.137';
+                    if (termsPro) termsPro.textContent = 'R$ 197 de implantação única • Cobrado anualmente: R$ 924';
                     if (tagPro) {
                         tagPro.style.display = 'inline-block';
-                        tagPro.textContent = 'ECONOMIZE R$ 314';
+                        tagPro.textContent = 'Economize 20%';
                     }
+                    if (btnPro) btnPro.href = "https://wa.me/5562998834515?text=Ol%C3%A1%2C%20Leonardo%21%20Tenho%20interesse%20no%20Plano%20Pro%20Anual%20da%20Digital%20GDS.%20Quero%20aproveitar%20o%20desconto%20anual.";
 
-                    // --- ULTRA ANUAL ---
-                    if (priceUltra) priceUltra.textContent = 'ORÇAMENTO PERSONALIZADO';
-                    if (termsUltra) termsUltra.textContent = 'Implantação e serviços recorrentes definidos após análise.';
+                    // --- ULTRA ANUAL (Mantido temporariamente o original do commit 8c39e60) ---
+                    if (priceUltra) priceUltra.textContent = 'Sob consulta';
+                    if (termsUltra) termsUltra.textContent = 'Planejamento e tráfego sob demanda';
+                    if (btnUltra) btnUltra.href = "https://wa.me/5562998834515?text=Ol%C3%A1%2C%20Leonardo%21%20Tenho%20interesse%20no%20Plano%20Ultra%20da%20Digital%20GDS.%20Quero%20uma%20an%C3%A1lise%20personalizada%20de%20estrutura%20completa.";
 
                 } else {
                     // Ativa botão Mensal
                     btnMonthly.classList.add('active');
                     btnAnnual.classList.remove('active');
 
-                    // --- STARTER MENSAL ---
+                    // --- STARTER MENSAL (Atualizado com os novos valores) ---
                     if (priceStarter) priceStarter.textContent = '147';
                     if (periodStarter) periodStarter.textContent = '/mês';
                     if (oldPriceStarter) {
                         oldPriceStarter.style.visibility = 'hidden';
                         oldPriceStarter.innerHTML = '&nbsp;';
                     }
-                    if (termsStarter) termsStarter.textContent = 'Sem taxa de implantação • Contratação pelo período de 12 meses';
+                    if (termsStarter) termsStarter.textContent = 'Sem taxa de implantação • Durante 12 meses';
+                    if (tagStarter) tagStarter.textContent = 'COMECE SEM ENTRADA';
+                    if (btnStarter) btnStarter.href = "https://wa.me/5562998834515?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20Plano%20Starter%20mensal%20da%20Digital%20GDS.%20Gostaria%20de%20receber%20mais%20informa%C3%A7%C3%B5es%20sobre%20a%20landing%20page%20sem%20taxa%20de%20implanta%C3%A7%C3%A3o.";
 
-                    // --- PRO MENSAL ---
+                    // --- PRO MENSAL (Atualizado com os novos valores) ---
                     if (pricePro) pricePro.textContent = '97';
                     if (periodPro) periodPro.textContent = '/mês';
                     if (oldPricePro) {
                         oldPricePro.style.visibility = 'visible';
-                        oldPricePro.textContent = 'R$ 287 de implantação única';
+                        oldPricePro.style.textDecoration = 'none';
+                        oldPricePro.textContent = 'R$ 287 de implantação';
                     }
-                    if (termsPro) termsPro.textContent = 'Primeira mensalidade após 30 dias • Total no 1º ano: R$ 1.451';
+                    if (termsPro) termsPro.textContent = 'Primeira mensalidade após 30 dias';
                     if (tagPro) {
-                        tagPro.style.display = 'none';
+                        tagPro.style.display = 'inline-block';
+                        tagPro.textContent = 'Popular';
                     }
+                    if (btnPro) btnPro.href = "https://wa.me/5562998834515?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20Plano%20Pro%20mensal%20da%20Digital%20GDS.%20Gostaria%20de%20receber%20mais%20informa%C3%A7%C3%B5es%20sobre%20a%20landing%20page%20com%20dom%C3%ADnio%20pr%C3%B3prio.";
 
-                    // --- ULTRA MENSAL ---
+                    // --- ULTRA MENSAL (Atualizado com os novos valores) ---
                     if (priceUltra) priceUltra.textContent = 'ORÇAMENTO PERSONALIZADO';
-                    if (termsUltra) termsUltra.textContent = 'Investimento composto por implantação, recorrentes e anúncios.';
+                    if (termsUltra) termsUltra.textContent = 'O investimento será definido após uma análise da necessidade do negócio.';
+                    if (btnUltra) btnUltra.href = "https://wa.me/5562998834515?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20Plano%20Ultra%20da%20Digital%20GDS%20e%20gostaria%20de%20solicitar%20uma%20an%C3%A1lise%20personalizada%20para%20o%20meu%20neg%C3%B3cio.";
                 }
 
                 // Finaliza animação com fade-in e retorno ao tamanho original
@@ -326,7 +338,7 @@
                         el.style.transform = 'scale(1)';
                     }
                 });
-            }, 200);
+            }, 150);
         }
 
         btnMonthly.addEventListener('click', () => {
