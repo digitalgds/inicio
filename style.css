@@ -1539,6 +1539,9 @@ footer {
     font-size: 0.88rem;
     font-weight: 700;
     transition: var(--transition);
+    border: none;
+    cursor: pointer;
+    outline: none;
 }
 
 .btn-view-model:hover {
@@ -1812,5 +1815,168 @@ nav {
     }
     .menu-toggle.active .hamburger-line:nth-child(3) {
         transform: translateY(-9px) rotate(-45deg);
+    }
+}
+
+
+/* ==========================================================================
+   Modal Simulador de Modelos (Iframe Mask)
+   ========================================================================== */
+.simulator-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 3000;
+    display: flex;
+    flex-direction: column;
+    background-color: #070e1a;
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(1.02);
+    transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow: hidden;
+}
+
+.simulator-modal.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+}
+
+.simulator-top-bar {
+    height: 64px;
+    background-color: #050505;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 0 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+    z-index: 15;
+}
+
+.simulator-btn-close {
+    background: transparent;
+    border: none;
+    color: var(--text-main);
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: var(--transition);
+    padding: 0.5rem 0.8rem;
+    border-radius: 8px;
+}
+
+.simulator-btn-close:hover {
+    color: var(--accent-green);
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.simulator-btn-close i {
+    width: 18px;
+    height: 18px;
+}
+
+.simulator-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-main);
+    text-align: center;
+    max-width: 45%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.simulator-btn-cta {
+    padding: 0.65rem 1.25rem !important;
+    font-size: 0.85rem !important;
+    border-radius: 8px !important;
+    font-weight: 700 !important;
+    gap: 0.4rem !important;
+}
+
+.simulator-iframe-container {
+    position: relative;
+    width: 100%;
+    flex-grow: 1;
+    background: #070e1a;
+}
+
+#simulator-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: #070e1a;
+}
+
+.simulator-loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #070e1a;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2rem;
+    z-index: 10;
+    opacity: 1;
+    transition: opacity 0.4s ease;
+}
+
+.simulator-loader.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.simulator-loader p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+/* Spinner animado */
+.simulator-loader .spinner {
+    width: 36px;
+    height: 36px;
+    border: 3px solid rgba(0, 230, 118, 0.1);
+    border-top-color: var(--accent-green);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+@media (max-width: 576px) {
+    .simulator-top-bar {
+        padding: 0 0.8rem;
+    }
+    
+    .simulator-btn-close span {
+        display: none; /* Oculta texto Voltar no mobile */
+    }
+    
+    .simulator-btn-close {
+        padding: 0.5rem;
+    }
+    
+    .simulator-title {
+        font-size: 0.9rem;
+        max-width: 50%;
+    }
+    
+    .simulator-btn-cta {
+        padding: 0.55rem 0.9rem !important;
+        font-size: 0.78rem !important;
     }
 }

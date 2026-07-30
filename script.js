@@ -508,9 +508,9 @@
                         <p class="layout-item-desc">${site.desc}</p>
                     </div>
                     <div class="layout-item-action">
-                        <a href="${site.url}" target="_blank" rel="noopener noreferrer" class="btn-view-model">
-                            Visualizar Modelo <i data-lucide="external-link"></i>
-                        </a>
+                        <button class="btn-view-model" data-url="${site.url}" data-name="${site.name}">
+                            Visualizar Modelo <i data-lucide="eye"></i>
+                        </button>
                     </div>
                 `;
                 modalLayoutsList.appendChild(layoutElement);
@@ -605,6 +605,86 @@
                 closeMenu();
             }
         });
+    }
+
+
+    // =======================================================
+    // Modal Simulador em Tela Cheia (Iframe Mask)
+    // =======================================================
+    const simulatorModal = document.getElementById('simulator-modal');
+    const simulatorIframe = document.getElementById('simulator-iframe');
+    const simulatorLoader = document.getElementById('simulator-loader');
+    const simulatorTitle = document.getElementById('simulator-title');
+    const simulatorBtnClose = document.getElementById('simulator-btn-close');
+    const simulatorBtnCta = document.getElementById('simulator-btn-cta');
+
+    if (simulatorModal && simulatorIframe && simulatorLoader) {
+        
+        const openSimulator = (url, name) => {
+            // Define o titulo no topo
+            if (simulatorTitle) {
+                simulatorTitle.textContent = `Modelo: ${name}`;
+            }
+
+            // Define o link personalizado no CTA do WhatsApp
+            if (simulatorBtnCta) {
+                const messageText = `Olá, Leonardo! Gostei muito do modelo "${name}" e gostaria de solicitar um orçamento para o meu negócio.`;
+                const encodedMsg = encodeURIComponent(messageText);
+                simulatorBtnCta.href = `https://wa.me/5562998834515?text=${encodedMsg}`;
+            }
+
+            // Reseta loader e carrega iframe
+            simulatorLoader.classList.remove('hidden');
+            simulatorIframe.src = url;
+
+            // Abre o modal simulador (fica por cima de tudo)
+            simulatorModal.classList.add('active');
+            
+            // Impede rolagem do body se ja nao estiver impedido
+            document.body.style.overflow = 'hidden';
+        };
+
+        const closeSimulator = () => {
+            // Oculta o modal
+            simulatorModal.classList.remove('active');
+            
+            // Se o modal de categorias nao estiver aberto, restaura o scroll do body
+            const categoryModal = document.getElementById('template-modal');
+            if (categoryModal && !categoryModal.classList.contains('active')) {
+                document.body.style.overflow = '';
+            }
+
+            // Limpa o iframe para parar carregamentos e scripts em segundo plano
+            setTimeout(() => {
+                simulatorIframe.src = '';
+            }, 300);
+        };
+
+        // Evento onload do iframe para ocultar o spinner de carregamento
+        simulatorIframe.addEventListener('load', () => {
+            if (simulatorIframe.src && simulatorIframe.src !== 'about:blank') {
+                simulatorLoader.classList.add('hidden');
+            }
+        });
+
+        // Evento do botao fechar / voltar
+        if (simulatorBtnClose) {
+            simulatorBtnClose.addEventListener('click', closeSimulator);
+        }
+
+        // Intercepta cliques nos botoes de visualizar modelo no modal de categorias (Event Delegation)
+        const layoutsList = document.getElementById('modal-layouts-list');
+        if (layoutsList) {
+            layoutsList.addEventListener('click', (e) => {
+                const btn = e.target.closest('.btn-view-model');
+                if (btn) {
+                    e.preventDefault();
+                    const url = btn.getAttribute('data-url');
+                    const name = btn.getAttribute('data-name');
+                    openSimulator(url, name);
+                }
+            });
+        }
     }
 
 });
