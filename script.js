@@ -538,6 +538,18 @@
             "desc": "Modelo moderno, corporativo e otimizado para escritórios de contabilidade e assessoria empresarial."
           }
         ]
+      },
+      {
+        "id": "infoproduto",
+        "title": "Infoproduto",
+        "iconName": "shopping-bag",
+        "sites": [
+          {
+            "name": "Facemaker 3D",
+            "url": "https://betinhogamesyoutuber.github.io/",
+            "desc": "Landing page de alta conversão para infoprodutos, cursos online e infoprodutores."
+          }
+        ]
       }
     ];
 
