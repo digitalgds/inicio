@@ -391,11 +391,11 @@
     const TEMPLATES_DATA = [
       {
         "id": "grama-sintetica",
-        "title": "Grama Sintética",
+        "title": "Grama SintÃ©tica",
         "iconName": "sprout",
         "sites": [
           {
-            "name": "Quanta Grama Sintética",
+            "name": "Quanta Grama SintÃ©tica",
             "url": "https://quantagramasintetica.com/",
             "desc": "Modelo focado em venda direta de revestimentos e gramas decorativas."
           }
@@ -409,7 +409,7 @@
           {
             "name": "Rodrigo Parente Advogados",
             "url": "https://rodrigoparenteadvogados.com/",
-            "desc": "Modelo tradicional com tom corporativo clássico."
+            "desc": "Modelo tradicional com tom corporativo clÃ¡ssico."
           },
           {
             "name": "Haline Cardoso",
@@ -419,82 +419,82 @@
           {
             "name": "Borges Almeida Advogados",
             "url": "https://baadvs.com.br/",
-            "desc": "Modelo moderno com estética premium focado em advocacia empresarial."
+            "desc": "Modelo moderno com estÃ©tica premium focado em advocacia empresarial."
           },
           {
             "name": "Weber Fernandes Advocacia",
             "url": "https://weberfernandesadv.github.io/",
-            "desc": "Modelo moderno com posicionamento de autoridade e alta conversão jurídica."
+            "desc": "Modelo moderno com posicionamento de autoridade e alta conversÃ£o jurÃ­dica."
           }
         ]
       },
       {
         "id": "vidracaria",
-        "title": "Vidraçaria",
+        "title": "VidraÃ§aria",
         "iconName": "grid",
         "sites": [
           {
-            "name": "Vidraçaria JF",
+            "name": "VidraÃ§aria JF",
             "url": "https://vidracariajf.com/",
-            "desc": "Modelo de showroom comercial com conversão rápida no WhatsApp."
+            "desc": "Modelo de showroom comercial com conversÃ£o rÃ¡pida no WhatsApp."
           }
         ]
       },
       {
         "id": "locacoes",
-        "title": "Locações",
+        "title": "LocaÃ§Ãµes",
         "iconName": "hammer",
         "sites": [
           {
-            "name": "Ricco Locações",
+            "name": "Ricco LocaÃ§Ãµes",
             "url": "https://riccolocacoes.github.io/",
-            "desc": "Modelo estruturado com listagem de catálogo de produtos de locação."
+            "desc": "Modelo estruturado com listagem de catÃ¡logo de produtos de locaÃ§Ã£o."
           }
         ]
       },
       {
         "id": "iluminacao",
-        "title": "Iluminação",
+        "title": "IluminaÃ§Ã£o",
         "iconName": "lightbulb",
         "sites": [
           {
             "name": "Geometria da Luz",
             "url": "https://geometriadaluz.github.io/",
-            "desc": "Modelo voltado a arquitetura e automação de iluminação."
+            "desc": "Modelo voltado a arquitetura e automaÃ§Ã£o de iluminaÃ§Ã£o."
           },
           {
-            "name": "La Luz Iluminação",
+            "name": "La Luz IluminaÃ§Ã£o",
             "url": "https://laluziluminacao.github.io/",
-            "desc": "Showroom de luminárias e pendentes decorativos."
+            "desc": "Showroom de luminÃ¡rias e pendentes decorativos."
           },
           {
             "name": "Luz de Led",
             "url": "https://luzdeled.github.io/",
-            "desc": "Showroom de fitas LED, perfis e iluminação moderna."
+            "desc": "Showroom de fitas LED, perfis e iluminaÃ§Ã£o moderna."
           }
         ]
       },
       {
         "id": "eletromoveis",
-        "title": "Eletromóveis",
+        "title": "EletromÃ³veis",
         "iconName": "armchair",
         "sites": [
           {
-            "name": "Eletromóveis",
-            "url": "https://eletromoveis.github.io/",
-            "desc": "Modelo focado no varejo de móveis e eletrodomésticos sob medida."
+            "name": "EletromÃ³veis",
+            "url": "https://eletromoveisgo.com.br/",
+            "desc": "Modelo focado no varejo de mÃ³veis e eletrodomÃ©sticos sob medida."
           }
         ]
       },
       {
         "id": "agencia",
-        "title": "Agência",
+        "title": "AgÃªncia",
         "iconName": "briefcase",
         "sites": [
           {
-            "name": "Cognição Digital",
+            "name": "CogniÃ§Ã£o Digital",
             "url": "https://cognicaodigittal.com/",
-            "desc": "Site oficial com o portfólio completo de ecossistemas digitais."
+            "desc": "Site oficial com o portfÃ³lio completo de ecossistemas digitais."
           }
         ]
       },
@@ -512,18 +512,30 @@
       },
       {
         "id": "psicologia",
-        "title": "Psicologia",
+        "title": "Psicologia & SaÃºde",
         "iconName": "users",
         "sites": [
           {
-            "name": "Mylena Psicóloga",
-            "url": "https://mylenapsi.github.io/",
-            "desc": "Modelo focado em captação de pacientes para psicologia clínica."
+            "name": "Weliton Dias (Psicologia)",
+            "url": "https://cognicaodigittal-pro.github.io/weliton-dias/",
+            "desc": "Modelo humanizado e acolhedor focado em consultas e agendamentos de psicologia clÃ­nica."
           },
           {
-            "name": "Psicologia Clínica",
-            "url": "https://psicologiaclinica.github.io/",
-            "desc": "Layout suave focado em acolhimento e agendamentos de sessões."
+            "name": "Dra. LÃ­gia Cristina (Fisioterapia)",
+            "url": "https://cognicaodigittal-pro.github.io/ligiacinalli/",
+            "desc": "Layout profissional voltado para clÃ­nicas e atendimentos especializados em fisioterapia."
+          }
+        ]
+      },
+      {
+        "id": "contabilidade",
+        "title": "Contabilidade",
+        "iconName": "calculator",
+        "sites": [
+          {
+            "name": "Zeitz Corp Contabilidade",
+            "url": "https://zeitzcorp.com.br/",
+            "desc": "Modelo moderno, corporativo e otimizado para escritÃ³rios de contabilidade e assessoria empresarial."
           }
         ]
       }
