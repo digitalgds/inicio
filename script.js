@@ -391,11 +391,11 @@
     const TEMPLATES_DATA = [
       {
         "id": "grama-sintetica",
-        "title": "Grama SintÃ©tica",
+        "title": "Grama Sintética",
         "iconName": "sprout",
         "sites": [
           {
-            "name": "Quanta Grama SintÃ©tica",
+            "name": "Quanta Grama Sintética",
             "url": "https://quantagramasintetica.com/",
             "desc": "Modelo focado em venda direta de revestimentos e gramas decorativas."
           }
@@ -409,7 +409,7 @@
           {
             "name": "Rodrigo Parente Advogados",
             "url": "https://rodrigoparenteadvogados.com/",
-            "desc": "Modelo tradicional com tom corporativo clÃ¡ssico."
+            "desc": "Modelo tradicional com tom corporativo clássico."
           },
           {
             "name": "Haline Cardoso",
@@ -419,82 +419,82 @@
           {
             "name": "Borges Almeida Advogados",
             "url": "https://baadvs.com.br/",
-            "desc": "Modelo moderno com estÃ©tica premium focado em advocacia empresarial."
+            "desc": "Modelo moderno com estética premium focado em advocacia empresarial."
           },
           {
             "name": "Weber Fernandes Advocacia",
             "url": "https://weberfernandesadv.github.io/",
-            "desc": "Modelo moderno com posicionamento de autoridade e alta conversÃ£o jurÃ­dica."
+            "desc": "Modelo moderno com posicionamento de autoridade e alta conversão jurídica."
           }
         ]
       },
       {
         "id": "vidracaria",
-        "title": "VidraÃ§aria",
+        "title": "Vidraçaria",
         "iconName": "grid",
         "sites": [
           {
-            "name": "VidraÃ§aria JF",
+            "name": "Vidraçaria JF",
             "url": "https://vidracariajf.com/",
-            "desc": "Modelo de showroom comercial com conversÃ£o rÃ¡pida no WhatsApp."
+            "desc": "Modelo de showroom comercial com conversão rápida no WhatsApp."
           }
         ]
       },
       {
         "id": "locacoes",
-        "title": "LocaÃ§Ãµes",
+        "title": "Locações",
         "iconName": "hammer",
         "sites": [
           {
-            "name": "Ricco LocaÃ§Ãµes",
+            "name": "Ricco Locações",
             "url": "https://riccolocacoes.github.io/",
-            "desc": "Modelo estruturado com listagem de catÃ¡logo de produtos de locaÃ§Ã£o."
+            "desc": "Modelo estruturado com listagem de catálogo de produtos de locação."
           }
         ]
       },
       {
         "id": "iluminacao",
-        "title": "IluminaÃ§Ã£o",
+        "title": "Iluminação",
         "iconName": "lightbulb",
         "sites": [
           {
             "name": "Geometria da Luz",
             "url": "https://geometriadaluz.github.io/",
-            "desc": "Modelo voltado a arquitetura e automaÃ§Ã£o de iluminaÃ§Ã£o."
+            "desc": "Modelo voltado a arquitetura e automação de iluminação."
           },
           {
-            "name": "La Luz IluminaÃ§Ã£o",
+            "name": "La Luz Iluminação",
             "url": "https://laluziluminacao.github.io/",
-            "desc": "Showroom de luminÃ¡rias e pendentes decorativos."
+            "desc": "Showroom de luminárias e pendentes decorativos."
           },
           {
             "name": "Luz de Led",
             "url": "https://luzdeled.github.io/",
-            "desc": "Showroom de fitas LED, perfis e iluminaÃ§Ã£o moderna."
+            "desc": "Showroom de fitas LED, perfis e iluminação moderna."
           }
         ]
       },
       {
         "id": "eletromoveis",
-        "title": "EletromÃ³veis",
+        "title": "Eletromóveis",
         "iconName": "armchair",
         "sites": [
           {
-            "name": "EletromÃ³veis",
+            "name": "Eletromóveis",
             "url": "https://digitalgds.github.io/eletromoveis/",
-            "desc": "Modelo focado no varejo de mÃ³veis e eletrodomÃ©sticos sob medida."
+            "desc": "Modelo focado no varejo de móveis e eletrodomésticos sob medida."
           }
         ]
       },
       {
         "id": "agencia",
-        "title": "AgÃªncia",
+        "title": "Agência",
         "iconName": "briefcase",
         "sites": [
           {
             "name": "Digital GDS",
             "url": "https://digitalgds.com/",
-            "desc": "Site oficial com o portfÃ³lio completo de ecossistemas digitais."
+            "desc": "Site oficial com o portfólio completo de ecossistemas digitais."
           }
         ]
       },
@@ -512,18 +512,18 @@
       },
       {
         "id": "psicologia",
-        "title": "Psicologia & SaÃºde",
+        "title": "Psicologia & Saúde",
         "iconName": "users",
         "sites": [
           {
             "name": "Weliton Dias (Psicologia)",
             "url": "https://digitalgds.github.io/weliton-dias/",
-            "desc": "Modelo humanizado e acolhedor focado em consultas e agendamentos de psicologia clÃ­nica."
+            "desc": "Modelo humanizado e acolhedor focado em consultas e agendamentos de psicologia clínica."
           },
           {
-            "name": "Dra. LÃ­gia Cristina (Fisioterapia)",
+            "name": "Dra. Lígia Cristina (Fisioterapia)",
             "url": "https://digitalgds.github.io/ligiacinalli/",
-            "desc": "Layout profissional voltado para clÃ­nicas e atendimentos especializados em fisioterapia."
+            "desc": "Layout profissional voltado para clínicas e atendimentos especializados em fisioterapia."
           }
         ]
       },
@@ -535,7 +535,7 @@
           {
             "name": "Zeitz Corp Contabilidade",
             "url": "https://zeitzcorp.com.br/",
-            "desc": "Modelo moderno, corporativo e otimizado para escritÃ³rios de contabilidade e assessoria empresarial."
+            "desc": "Modelo moderno, corporativo e otimizado para escritórios de contabilidade e assessoria empresarial."
           }
         ]
       }
