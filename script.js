@@ -481,7 +481,7 @@
         "sites": [
           {
             "name": "EletromÃ³veis",
-            "url": "https://eletromoveisgo.com.br/",
+            "url": "https://digitalgds.github.io/eletromoveis/",
             "desc": "Modelo focado no varejo de mÃ³veis e eletrodomÃ©sticos sob medida."
           }
         ]
@@ -492,8 +492,8 @@
         "iconName": "briefcase",
         "sites": [
           {
-            "name": "CogniÃ§Ã£o Digital",
-            "url": "https://cognicaodigittal.com/",
+            "name": "Digital GDS",
+            "url": "https://digitalgds.com/",
             "desc": "Site oficial com o portfÃ³lio completo de ecossistemas digitais."
           }
         ]
@@ -505,7 +505,7 @@
         "sites": [
           {
             "name": "Midnight Executive Layout",
-            "url": "https://cognicaodigittal.com/",
+            "url": "https://digitalgds.com/",
             "desc": "Modelo premium focado em posicionamento executivo de autoridade."
           }
         ]
@@ -517,12 +517,12 @@
         "sites": [
           {
             "name": "Weliton Dias (Psicologia)",
-            "url": "https://cognicaodigittal-pro.github.io/weliton-dias/",
+            "url": "https://digitalgds.github.io/weliton-dias/",
             "desc": "Modelo humanizado e acolhedor focado em consultas e agendamentos de psicologia clÃ­nica."
           },
           {
             "name": "Dra. LÃ­gia Cristina (Fisioterapia)",
-            "url": "https://cognicaodigittal-pro.github.io/ligiacinalli/",
+            "url": "https://digitalgds.github.io/ligiacinalli/",
             "desc": "Layout profissional voltado para clÃ­nicas e atendimentos especializados em fisioterapia."
           }
         ]
