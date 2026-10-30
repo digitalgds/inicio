@@ -480,9 +480,9 @@
         "iconName": "armchair",
         "sites": [
           {
-            "name": "Eletromóveis",
-            "url": "https://digitalgds.github.io/eletromoveis/",
-            "desc": "Modelo focado no varejo de móveis e eletrodomésticos sob medida."
+            "name": "Bela Casa Móveis Usados",
+            "url": "https://belacasamoveisusados.com/",
+            "desc": "Modelo comercial de apresentação de ambientes e móveis planejados."
           }
         ]
       },
