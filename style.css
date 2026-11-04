@@ -1571,8 +1571,11 @@ footer {
     }
 
     .template-modal-content {
-        padding: 1.8rem 1.2rem;
+        padding: 1.8rem 1.2rem 2.5rem 1.2rem;
         border-radius: 20px;
+        max-height: 90vh;
+        margin-bottom: env(safe-area-inset-bottom, 1rem);
+        -webkit-overflow-scrolling: touch;
     }
     
     .template-modal-header {

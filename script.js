@@ -447,7 +447,7 @@
         "sites": [
           {
             "name": "Ricco Locações",
-            "url": "https://riccolocacoes.github.io/",
+            "url": "https://riccocarretinhas.com/",
             "desc": "Modelo estruturado com listagem de catálogo de produtos de locação."
           }
         ]
